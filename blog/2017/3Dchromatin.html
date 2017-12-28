@@ -23,6 +23,10 @@
 	    }
 	  });
 	});
+
+  </script>
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
 	</script>
 </head>
 
@@ -42,23 +46,100 @@
   <div id="main">
     <div class="content">
       
+    	<div class='title'>
     	Toy models to reconstruct 3D chromatin structure
+    	</div>
+    	<p>
+			In this blog, we used toy models to reconstruct 3D chromatin structure. This problem is posed as optimization problem. The input is 3D distance derived from Hi-C and FISH data and the output is the relative coordinates in 3D space.
+        </p>
 
-
-      <div class="block">
-        <div class="abstract">
-          <div class="right">
-            <div class="research_title">
-              Active Learning Note
-            </div>
-          	<p>
-			In this blog, we will discuss two toy model to reconstruct 3D chromatin structure. 
-          	</p>
-
-          </div>
+        <div class='subtitle'>
+        Background
         </div>
+        <div class='subsubtitle'>Beads model </div>
+		<p>Basically, we consider the DNA sequence as a loop of bead (several consesitive sequences are one bead).</p>
+
+		<div class='subsubtitle'> Hi-C and FISH experiments </div>
+        <p>Here are the experimental procedures for Hi-C. Hi-C will return the interaction frequency of pairwise beads. Intuitively, when the distance of two beads is close, their interaction frequency is large. If the relathionship between spatial distance and interaction frequency is strictly positive correlated. We could just use the interaction frequency to reconstruct the structure. However, Hi-C data has much noise when the interaction frequency is too large or small. Since we don't know the threshold, we could integrate FISH data (the determined distance of two beads) and pose the problem as a curve fitting problem.</p>
+
+        <div class ='subtitle'> Converting beads distance to beads coordinates (Core part)</div>
+
+        <div class='subsubtitle'> <p> Model1 </p> </div>
+
+        To pose it as an optimization problem, we want to make the pairwise distance from estimated coordinates as close as the real distance. Thus, objective function is defined using mean-squared error between real distances and calculated distances, and initial coordinates for all the positions are randomly initialized within a ball with radius 1.0.the objective function here. More precisely,
+
+        $$F_n = \sum_{i < j}\frac{(||P_i - P_j|| - D_{ij})^2}{D_{ij}^2}.$$
+
+        We could use gradient descent to solve this problem.
+        The derivatives used for updating parameters are 
+        $$\frac{\partial F_n}{\partial x_i} = \sum_j \frac{2(||P_i - P_j|| - D_{ij})^2}{D_{ij}^2} \frac{x_i-x_j}{\sqrt{(x_i-x_j)^2+(y_i-y_j)^2 +(z_i-z_j)^2}}$$
+        $$\frac{\partial F_n}{\partial y_i} = \sum_j \frac{2(||P_i - P_j|| - D_{ij})^2}{D_{ij}^2} \frac{y_i-y_j}{\sqrt{(x_i-x_j)^2+(y_i-y_j)^2 +(z_i-z_j)^2}}$$
+        $$\frac{\partial F_n}{\partial z_i} = \sum_j \frac{2(||P_i - P_j|| - D_{ij})^2}{D_{ij}^2} \frac{z_i-z_j}{\sqrt{(x_i-x_j)^2+(y_i-y_j)^2 +(z_i-z_j)^2}}$$	
+
+        The coordinate update process for node i is
+        $$x_i = x_i - lr * \frac{\partial F_n}{\partial x_i}$$
+        $$y_i = y_i - lr * \frac{\partial F_n}{\partial y_i}$$
+        $$z_i = z_i - lr * \frac{\partial F_n}{\partial z_i}$$
+
+        Here is the code for above process
+        <p><embed src='3Dchromatin/m1_gd.py'></p>
+        <p>Here is the estimated structure.</p>
+       	<embed src='3Dchromatin/c0001.png'>
+
+        <div class='subsubtitle'> <p> Model2 </p> </div>
+        <p>Given FISH data is hard to get, model 2 only used Hi-C data. More precisely, we used the following equation for normalization:
+        $$F_{ij}= C_{ij} \frac{\sum_{k=1}^{n-1} \sum_{l=k+1}^n C_{kl}}{\sum_{k=1}^n C_{ik} \sum_{k=1}^n C_{kj}}$$
+        where $C_ij$ are the contract frequency from Hi-C. </p>
+        <p>The goal of optimization using Lorentzian objective function is to make the distances between region pairs in contact less than dc (contact distance threshold) and the distances between non- contact regions at least dc[7]. The weight parameters are used with the objective function below to guide the reconstruction of chromosomal structures:
+
+        $$F_n = \sum_{contacts, |i - j| \ne 1} (W_1 tanh(d_c^2-d_{ij}^2) \frac{F_{ij}}{totalIF} + W_2\frac{tanh(d_{ij}^2 - d_{min}^2)}{totalIF}) \\ + \sum_{non-contacts, |i - j| \ne 1} (W_3 \frac{tanh(d_{max}^2-d_{ij}^2)}{totalIF} + W_4\frac{tanh(d_{ij}^2 - d_{min}^2)}{totalIF}) \\ + \sum_{|i - j| = 1} (W_1 tanh(da_{max}^2-d_{ij}^2) \frac{IF_{max}}{totalIF} + W_2\frac{tanh(d_{ij}^2 - d_{min}^2)}{totalIF})$$</p>
+
+        <p> Here dmin, dmax and damax are some parameters we chose based on prior knowledge[7]. To specify, dmin is the minimum distance between two regions, and dmax is the maximum distance between two regions. damax is the maximum distance between two adjacent regions. </p>
+		<p> Since the derivative of objective function is easy get, we still use derivative-based method to make it more efficient. We want to maximize our objective function for this model so gradient ascent is used here. The derivative functions are: 
+		$$\frac{\partial F_n}{\partial d_{ij}} = \sum_{contacts, |i - j| \ne 1} (-W_1 2d_{ij} sech(d_c^2-d_{ij}^2) \frac{F_{ij}}{totalIF} + W_2 2d_{ij}\frac{sech(d_{ij}^2 - d_{min}^2)}{totalIF}) \\ + \sum_{non-contacts, |i - j| \ne 1} (-W_3 2d_{ij}\frac{sech(d_{max}^2-d_{ij}^2)}{totalIF} + W_4 2d_{ij}\frac{sech^2(d_{ij}^2 - d_{min}^2)}{totalIF}) \\ + \sum_{|i - j| = 1} (-W_1 tanh(da_{max}^2-d_{ij}^2) 2d_{ij} \frac{IF_{max}}{totalIF} + W_2\frac{tanh(d_{ij}^2 - d_{min}^2) 2d_{ij}}{totalIF})$$
+
+		$$\frac{\partial d_{ij}}{dx_i} = \frac{x_i-x_j}{\sqrt{(x_i-x_j)^2+(y_i-y_j)^2 +(z_i-z_j)^2}}$$
+		$$\frac{\partial d_{ij}}{dy_i} = \frac{y_i-y_j}{\sqrt{(y_i-y_j)^2+(y_i-y_j)^2 +(z_i-z_j)^2}}$$
+		$$\frac{\partial d_{ij}}{dz_i} = \frac{z_i-z_j}{\sqrt{(z_i-z_j)^2+(y_i-y_j)^2 +(z_i-z_j)^2}}$$
+		</p>
+		<p>The initialization procedure used here is the same as model 1. Different weight parameters are tested for each chromosome to get optimal solution.</p>
+		Here is the code for above process
+        <p><embed src='3Dchromatin/m2_gd.py'></p>
+
+
+        <div class='subtitle'> Vistualization</div>
+        <p> We found PYMOL is a good tool to vistualize the 3D structure. </p>
+        <p>Here is the code to convert coordinates to pdb file. </p>
+        <embed src='3Dchromatin/posi2pdb.py'>
+
+        <p>BTW, extracting coordinates from pdb file is</p>
+        <embed src='3Dchromatin/pdb2posi.py'>
+
+        <p> Here is the code to generate a movie for 3D structure rotating 360. </p>
+        <embed src="3Dchromatin/pymol.md"> 
+
+       	<p>Here is the estimated structure.</p>
+       	<embed src='3Dchromatin/a0001.png'>
+        <div class='subtitle'>
+        	Future work
+        </div> 
+        <p> 1. Objective function with biological constrains. </p>
+        <p> 2. Robust analysis </p>
+
+        <div class='subsubtitle'> Please contact me if you want the full code. </div>
+
+        <div class='subtitle'> Reference </div>
+        <p>[1] Dekker, Job, Karsten Rippe, Martijn Dekker, and Nancy Kleckner. ”Capturing chromosome conforma- tion.”science 295, no. 5558 (2002): 1306-1311.</p>
+		<p>[2] Dostie, Jose ́e, Todd A. Richmond, Ramy A. Arnaout, Rebecca R. Selzer, William L. Lee, Tracey A. Honan, Eric D. Rubio et al. ”Chromosome Conformation Capture Carbon Copy (5C): a massively parallel solution for mapping interactions between genomic elements.”Genome research 16, no. 10 (2006): 1299- 1309.</p>
+		<p>[3] Lieberman-Aiden, Erez, Nynke L. Van Berkum, Louise Williams, Maxim Imakaev, Tobias Ragoczy, Agnes Telling, Ido Amit et al. ”Comprehensive mapping of long-range interactions reveals folding prin- ciples of the human genome.”science 326, no. 5950 (2009): 289-293.</p>
+		<p>[4] Zhang, ZhiZhuo, et al. ”3D chromosome modeling with semi-definite programming and Hi-C data.”Journal of computational biology 20.11 (2013): 831-846.</p>
+		<p>[5] Lesne, Annick, et al. ”3D genome reconstruction from chromosomal contacts.”Nature methods 11.11 (2014): 1141-1143. </p>
+		<p>[6] Kalhor, R., Tjong, H., Jayathilaka, N., Alber, F., Chen, L. (2012). Genome architectures revea- led by tethered chromosome conformation capture and population-based modeling. Nature biotechno- logy, 30(1), 90-98. </p>
+		<p>[7] Trieu, Tuan, and Jianlin Cheng. ”3D genome structure modeling by Lorentzian objective func- tion.”Nucleic acids research 45.3 (2017): 1049-1058.</p>
+		<p>[8] Schrodinger, L. L. C. ”The PYMOL Molecular Graphics System, Ver. 1.3 r1.”(2010).</p>
 
 	</div>
+
 
 
   <div style="margin-top: 10px; text-align: center; font-size: 14px;">
