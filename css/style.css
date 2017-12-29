@@ -112,6 +112,13 @@ span.emph {
   color: #555;
   font-weight: bold;
 }
+.research_title {
+  color: #555;
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
 .title {
   color: #555;
   margin-left: 20px;
@@ -130,6 +137,10 @@ span.emph {
   color: #555;
   font-weight: bold;
   font-size: 14px;
+}
+.date {
+  color: #555;
+  font-size: 13px;
 }
 a:link, a:visited {
   color: inherit;
