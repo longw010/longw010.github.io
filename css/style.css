@@ -5,7 +5,7 @@ div, ul, img {
 }
 */
 body {
-  background-image: url('../images/background.jpg');
+  background-image: url('../images/background.png');
   background-color: #ddd;
   font-family: Helvetica, Arial, sans-serif;
   margin: 0;
@@ -13,15 +13,15 @@ body {
   padding: 0;
   font-weight: 100;
   font-size: 16px;
-  color: #333;
+  color: black;
 }
 #main {
   clear: both;
-  width: 900px;
+  width: 700px;
   margin: 0 auto;
   margin-top: 30px;
   background: rgba(255,255,255, 1);
-  padding: 20px;
+  padding: 30px;
 }
 .banner {
   position: -webkit-sticky;
@@ -30,10 +30,10 @@ body {
   background-image: url('../images/banner.png');
   opacity: 0.9;
   background-color: rgba(0,0,0,0.8);
-  height: 60px;
+  height: 80px;
 }
 #header {
-  width: 900px;
+  width: 850px;
   margin: 0 auto;
   position: relative;
   color: white;
@@ -41,8 +41,8 @@ body {
   padding-bottom: 5px;
 }
 #name {
-  padding-left: 10px;
-  font-family: "Julius Sans One", sans-serif;
+  padding-left: 30px;
+  font-family : "Comic sans MS";
   font-size: 30px;
   width: 300px;
 }
@@ -50,7 +50,7 @@ body {
   margin: auto 0;
   text-align: right;
   position: absolute;
-  right: 10px;
+  right: 20px;
   bottom: 5px;
 }
 #navigator a:link, #navigator a:visited,  {
@@ -99,9 +99,10 @@ body {
   display: inline-block;
   font-size: 20px;
   padding:0 10px;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 .title {
-  color: #555;
+  color: black;
   font-weight: bold;
   font-size: 25px;
   margin-top: 15px;
@@ -109,18 +110,19 @@ body {
   margin-bottom: 10px;
 }
 span.emph {
-  color: #555;
+  color: black;
   font-weight: bold;
 }
 .research_title {
-  color: #555;
-  margin-left: 20px;
+  color: black;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
   font-weight: bold;
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top:0px;
 }
 .title {
-  color: #555;
+  color: black;
   margin-left: 20px;
   font-weight: bold;
   font-size: 20px;
@@ -128,31 +130,24 @@ span.emph {
   text-align: center;
 }
 .subtitle {
-  color: #555;
+  color: black;
   font-weight: bold;
   font-size: 17px;
   text-align: center;
 }
 .subsubtitle {
-  color: #555;
+  color: black;
   font-weight: bold;
   font-size: 14px;
 }
 .date {
-  color: #555;
+  color: gray;
   font-size: 13px;
 }
-a:link, a:visited {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px dashed #333;
-}
-a.anchor {
-  display: block;
-  position: relative;
-  top: -110px;
-  visibility: hidden;
-}
+A:link { COLOR: inherit; TEXT-DECORATION: none }
+A:visited { COLOR: inherit; TEXT-DECORATION: none }
+A:active { COLOR: inherit; TEXT-DECORATION: none }
+A:hover { COLOR: grey; TEXT-DECORATION: none }
 ul li {
   margin-bottom: 8px;
   line-height: 1.5;
