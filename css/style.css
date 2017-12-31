@@ -12,12 +12,12 @@ body {
   margin-bottom: 50px;
   padding: 0;
   font-weight: 100;
-  font-size: 16px;
-  color: black;
+  font-size: 18px;
+  color: grey;
 }
 #main {
   clear: both;
-  width: 700px;
+  width: 800px;
   margin: 0 auto;
   margin-top: 30px;
   background: rgba(255,255,255, 1);
@@ -27,24 +27,26 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-image: url('../images/banner.png');
+  background-image: url('../images/banner8.png');
   opacity: 0.9;
   background-color: rgba(0,0,0,0.8);
-  height: 80px;
+  height: 60px;
 }
 #header {
   width: 850px;
   margin: 0 auto;
   position: relative;
-  color: white;
-  padding-top: 15px;
-  padding-bottom: 5px;
+  color: black;
+  padding-top: 10px;
+  padding-bottom: -5px;
 }
 #name {
   padding-left: 30px;
-  font-family : "Comic sans MS";
+  font-family: "Brush Script MT", cursive;
   font-size: 30px;
   width: 300px;
+  padding-bottom: -10px;
+  padding-left: 0px;
 }
 #navigator {
   margin: auto 0;
@@ -106,7 +108,6 @@ body {
   font-weight: bold;
   font-size: 25px;
   margin-top: 15px;
-  margin-left: 10px;
   margin-bottom: 10px;
 }
 span.emph {
@@ -117,32 +118,46 @@ span.emph {
   color: black;
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 20px;
   margin-top:0px;
 }
 .title {
   color: black;
-  margin-left: 20px;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
   font-weight: bold;
-  font-size: 20px;
+  font-size: 30px;
+  margin-top: 10px;
   margin-bottom: 10px;
-  text-align: center;
 }
 .subtitle {
   color: black;
   font-weight: bold;
-  font-size: 17px;
-  text-align: center;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
+  font-weight: bold;
+  font-size: 23px;
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 .subsubtitle {
   color: black;
   font-weight: bold;
-  font-size: 14px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .date {
   color: gray;
-  font-size: 13px;
+  font-size: 15px;
+}
+.subword{
+  font-weight: 100;
+  font-size: 18px;
+  color: #4D5053;
+
+
 }
 A:link { COLOR: inherit; TEXT-DECORATION: none }
 A:visited { COLOR: inherit; TEXT-DECORATION: none }
@@ -158,3 +173,21 @@ ul {
   margin-bottom: 15px;
   margin-left: 10px;
 }
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 60px;
+    margin-left: 30px;
+    line-height:1.5;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+}
+em:lang(zh) {
+    font-family: "Times New Roman", Georgia, Serif;
+ }
