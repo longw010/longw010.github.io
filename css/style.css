@@ -27,26 +27,28 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-image: url('../images/banner10.png');
+  background-image: url('../images/banner11.png');
   opacity: 0.9;
   background-color: rgba(0,0,0,0.8);
   height: 60px;
+  max-width: 100%;
+  height: auto;
+  width: auto;
 }
 #header {
   width: 850px;
-  margin: 0 auto;
+  margin: auto;
   position: relative;
   color: black;
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: -5px;
 }
 #name {
   padding-left: 30px;
   font-family: "Brush Script MT", cursive;
-  font-size: 30px;
+  font-size: 36px;
   width: 300px;
-  padding-bottom: -10px;
-  padding-left: 0px;
+  padding-bottom: 0px;
 }
 #navigator {
   margin: auto 0;
@@ -79,6 +81,7 @@ body {
 }
 .introduction {
   margin-bottom: 20px;
+  color:black;
 }
 .abstract, .introduction {
   overflow: auto;
