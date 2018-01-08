@@ -10,7 +10,7 @@ def get_dist(x, y):
     return np.linalg.norm(x-y)
 
 def get_value(A, i, j):
-    if i < j:
+    if i &lt j:
         return A[j, i]
     else:
         return A[i, j]
