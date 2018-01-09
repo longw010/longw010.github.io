@@ -13,7 +13,7 @@ body {
   padding: 0;
   font-weight: 100;
   font-size: 18px;
-  color: grey;
+  color: #4D5053;
 }
 #main {
   clear: both;
@@ -81,7 +81,7 @@ body {
 }
 .introduction {
   margin-bottom: 20px;
-  color:black;
+  color: #4D5053;
 }
 .abstract, .introduction {
   overflow: auto;
@@ -159,7 +159,7 @@ span.emph {
   font-weight: 100;
   font-size: 18px;
   color: #4D5053;
-
+  line-height:1.2;
 
 }
 A:link { COLOR: inherit; TEXT-DECORATION: none }
@@ -204,7 +204,7 @@ overflow:auto;
 padding:30px;
 }
 pre:hover {
-border:1px solid #efefef;
+border:1px;
 }
 code {
 font-size:120%;
@@ -214,3 +214,5 @@ margin:10;padding:0;
 .clear { clear:both;
 overflow:hidden;
 }
+linked {COLOR: #008CBA; TEXT-DECORATION: none}
+
