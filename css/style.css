@@ -107,7 +107,7 @@ body {
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 .title {
-  color: black;
+  color: #4D5053;
   font-weight: bold;
   font-size: 25px;
   margin-top: 15px;
@@ -118,15 +118,14 @@ span.emph {
   font-weight: bold;
 }
 .research_title {
-  color: black;
+  color: #4D5053;
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
-  font-weight: bold;
   font-size: 22px;
   margin-bottom: 20px;
   margin-top:0px;
 }
 .title {
-  color: black;
+  color: #4D5053;
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
   font-weight: bold;
   font-size: 30px;
@@ -134,7 +133,7 @@ span.emph {
   margin-bottom: 10px;
 }
 .subtitle {
-  color: black;
+  color: #4D5053;
   font-weight: bold;
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
   font-weight: bold;
@@ -144,7 +143,7 @@ span.emph {
   margin-bottom: 10px;
 }
 .subsubtitle {
-  color: black;
+  color: #4D5053;
   font-weight: bold;
   font-weight: bold;
   font-size: 18px;
@@ -162,10 +161,14 @@ span.emph {
   line-height:1.2;
 
 }
-A:link { COLOR: inherit; TEXT-DECORATION: none }
-A:visited { COLOR: inherit; TEXT-DECORATION: none }
-A:active { COLOR: inherit; TEXT-DECORATION: none }
-A:hover { COLOR: grey; TEXT-DECORATION: none }
+a.one:link { COLOR: #538cc6; TEXT-DECORATION: none }
+a.one:visited { COLOR: #538cc6; TEXT-DECORATION: none }
+a.one:active { COLOR: #538cc6; TEXT-DECORATION: none }
+a.one:hover { COLOR:  #538cc6; TEXT-DECORATION: none  }
+a.two:link { COLOR: #4D5053; TEXT-DECORATION: none }
+a.two:visited { COLOR: inherit; TEXT-DECORATION: none }
+a.two:active { COLOR: inherit; TEXT-DECORATION: none }
+a.two:hover { COLOR:  #538cc6; TEXT-DECORATION: none  }
 ul li {
   margin-bottom: 8px;
   line-height: 1.5;
