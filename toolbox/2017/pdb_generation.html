@@ -46,12 +46,23 @@
     <div class="content">
     <div class='date'>
       Dec 10, 2017 </div>
-    <div class="title"> Active Learning Note </div>
+    <div class="title"> <a class="two" href="https://longw010.github.io/toolbox/2017/pdb_generation.html"> How to generate PDB file from the cooredinates? </a>
+ </div>
 
-	<p> In this tutorial, we will test the performance of several active learning strategies. </p>
+	<p> The purpose of this blog is to show how to generate a valid PDB file from the coordinates. </p>
 
-	
+	<p> Basically, we separate the PDB file into two parts: lines started from "ATOM" and lines started from "CONNECT". When you do the generation, you may need to check: </p>
+	<p> 1. the space between two elements in one line. (see PDB format <a class="one" href="http://www.bmrb.wisc.edu/standards/pdb_3-3_atom_record_example.pdf"> here </a>).   </p>
+	<p> 2. add "END" at the end of the file. </p>
 
+	<p>&nbsp;</p>
+	<p>
+		<script src="https://gist.github.com/longw010/cc8290901b99385b263f7aa5b0a9a9f0.js"></script>
+		<noscript>
+			<pre>
+    		</pre>
+ 		</noscript>
+	</p>
 	</div>
 
 <hr>
