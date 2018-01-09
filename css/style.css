@@ -27,7 +27,7 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-image: url('../images/banner11.png');
+  background-image: url('../images/banner12.png');
   opacity: 0.9;
   background-color: rgba(0,0,0,0.8);
   height: 60px;
@@ -41,7 +41,7 @@ body {
   position: relative;
   color: black;
   padding-top: 15px;
-  padding-bottom: -5px;
+  padding-bottom: 0px;
 }
 #name {
   padding-left: 30px;
