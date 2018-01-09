@@ -204,7 +204,9 @@ border:1px solid #A6B0BF;
 font-size:80%;
 line-height:120%;
 overflow:auto;
-padding:30px;
+padding:5px;
+margin-left:50px;
+margin-right:80px;
 }
 pre:hover {
 border:1px;
@@ -212,7 +214,7 @@ border:1px;
 code {
 font-size:120%;
 text-align:left;
-margin:10;padding:0;
+margin:0;padding:0;
 }
 .clear { clear:both;
 overflow:hidden;

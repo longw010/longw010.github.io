@@ -45,26 +45,88 @@
   <div id="main">
     <div class="content">
     <div class='date'>
-      Dec 10, 2017 </div>
-    <div class="title"> <a class="two" href="https://longw010.github.io/toolbox/2017/pdb_generation.html"> How to generate PDB file from the cooredinates? </a>
+    Oct 10, 2017 </div>
+    <div class="title"> <a class="two" href="https://longw010.github.io/toolbox/2017/globalRDD.html"> Global var doesn't work in this context.</a>
  </div>
 
-	<p> The purpose of this blog is to show how to generate a valid PDB file from the coordinates. </p>
-
-	<p> Basically, we separate the PDB file into two parts: lines started from "ATOM" and lines started from "CONNECT". When you do the generation, you may need to check: </p>
-	<p> 1. the space between two elements in one line is consistent with  <a class="one" href="http://www.bmrb.wisc.edu/standards/pdb_3-3_atom_record_example.pdf"> PDB format </a>.   </p>
-	<p> 2. add "END" at the end of the file. </p>
-
-	<p>&nbsp;</p>
 	<p>
-		<script src="https://gist.github.com/longw010/cc8290901b99385b263f7aa5b0a9a9f0.js"></script>
-		<noscript>
-			<pre>
-    		</pre>
+	The following example shows a deliberate combination of local and global variables and function parameters, and how global variables work: </p>
+
+	<p>
+		<pre>
+def foo(x, y):
+	global a
+	a = 42
+	x,y = y,x
+	b = 33
+	b = 17
+	c = 100
+	print a,b,x,y
+
+a,b,x,y = 1,15,3,4
+foo(17,4)
+print a,b,x,y </pre>
  		</noscript>
 	</p>
+
+<p> The output of the script above looks like this: </p>
+<p>
+	<pre>
+42 17 4 17
+42 15 3 4 </pre>
+</p>
+
+<p> Guass what is the output for the following code?
+<p> <pre>
+def increment_counter():
+    global counter
+    counter += 1
+    print(counter)
+
+def get_number_of_elements(rdd):
+    global counter
+    counter = 0
+    rdd.foreach(lambda x: increment_counter())
+    return counter </pre>
+    </p>
+
+ <p> It is <b> 0. </b></p>
+ <p> My guess is that although the function increment_counter() increments the number of element in rdd correctly, it will not assign the value of counter from function increment_counter() to the counter in function get_number_of_elements(rdd). In other word, it (rdd.foreach) won’t update counter in get_number_of_elements() because global variable is not caught by the functions executed in foreach in pyspark. Thus, the counter returned from get_number_of_element(rdd) is still 0 no matter how many the number of element rdd has. </p> 
+
+
+<p> You can check it out using the following code. </p>
+<p><pre>
+from __future__ import print_function
+
+from pyspark.sql import SparkSession
+
+def increment_counter():
+    global counter
+    counter += 1
+    print(counter)
+
+def get_number_of_elements(rdd):
+    global counter
+    counter = 0
+    rdd.foreach(lambda x: increment_counter())
+    return counter
+
+if __name__ == "__main__":
+    # Initialize the spark context.
+    spark = SparkSession\
+       .builder\
+        .appName("test")\
+        .getOrCreate()
+
+    lines = spark.read.text('url.txt').rdd.map(lambda r: r[0])
+    #print(lines.collect())
+    print(get_number_of_elements(lines))
+
+    spark.stop()</pre>
+</p>
 	</div>
 
+<p>Thus, we should use <b> reduceByKey </b> instead. </p>
 <hr>
 <div style="margin-top: 10px; text-align: center; font-size: 14px;">
 <section class="pagination" style="text-align:center">
