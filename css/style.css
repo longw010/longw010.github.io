@@ -216,3 +216,18 @@ overflow:hidden;
 }
 linked {COLOR: #008CBA; TEXT-DECORATION: none}
 
+.card {
+  position: relative;
+  display: inline-block;
+  margin: 4px;
+}
+.card .img-top {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.card:hover .img-top {
+  display: inline;
+}
