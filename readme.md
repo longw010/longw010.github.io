@@ -1,6 +1,4 @@
-https://longw010.github.io/
+#README
 
-to do list:
-- finish blogs
-- add icons at footer
-- 
+See more details in https://longw010.github.io/.
+
