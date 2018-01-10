@@ -58,7 +58,9 @@
 
     <div class='subtitle'> RNN </div>
     <p> A 4-gram language model using a Multilayer Perceptron with an embedding layer is built according to Figure 1. For each of the 4-word combinations, the next word is predicted given the first three words.  
-    <embed src="/blog/2017/DeepLearning/rnn.png"> </p>
+   </p>
+   <img src="/blog/2017/DeepLearning/rnn.png" width="250" height="250">
+   
     <div class='subsubtitle'> Preprocessing:: </div>
     <p>We first sorted the tokens by frequency, and only saved the top 8000 tokens; then we added "START" and "END" tags to the start and end of sentences. For the tokens that are not in the 8000 word of bags above, they are replaced by "UNK". </p>
     <p> Detailed implementation is <a class="one" href="https://github.com/longw010/DL_Notes/blob/master/rnn/train.py"> here</a> . </p>
