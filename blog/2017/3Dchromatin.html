@@ -87,16 +87,7 @@
         The coordinate update process for node i is
         $$x_i = x_i - lr * \frac{\partial F_n}{\partial x_i}$$
         $$y_i = y_i - lr * \frac{\partial F_n}{\partial y_i}$$
-        $$z_i = z_i - lr * \frac{\partial F_n}{\partial z_i}$$
-
-        Here is the code for above process
-            <p>
-        <script src="https://gist.github.com/longw010/b5f218c96a1467f95e45c164372a84ac.js"></script>
-        <noscript>
-            <pre>
-            </pre>
-        </noscript>
-        </p>    
+        $$z_i = z_i - lr * \frac{\partial F_n}{\partial z_i}$$ 
 
         <div class='subsubtitle'> Model2 </div>
         <p>Given FISH data is hard to get, model 2 only used Hi-C data. More precisely, we used the following equation for normalization:
@@ -115,16 +106,7 @@
 		$$\frac{\partial d_{ij}}{dz_i} = \frac{z_i-z_j}{\sqrt{(z_i-z_j)^2+(y_i-y_j)^2 +(z_i-z_j)^2}}$$
 		</p>
 		<p>The initialization procedure used here is the same as model 1. Different weight parameters are tested for each chromosome to get optimal solution.</p>
-		<p>Here is the code for above process </p>
-            <p>
-            <script src="https://gist.github.com/longw010/87c898fe43c8bf144670c3ad899745cb.js"></script>
-        <noscript>
-            <pre>
-            </pre>
-        </noscript>
-        </p>    
-
-
+   
         <div class='subtitle'> Vistualization</div>
         <p> We found PYMOL is a good tool to vistualize the 3D structure. </p>
 
@@ -136,8 +118,8 @@ set ray_trace_frames, 1
 set cache_frames, 0﻿</pre>
     </p>
     <p>Here is the estimated structure.</p>
-    <p> <img src="a0001.png" width="250" height="250"> <img src="a0001.png" width="250" height="250"></p>
-    
+    <p> <img src="/blog/2017/3Dchromatin/a0001.png" width="250" height="250"> <img src="/blog/2017/3Dchromatin/c0001.png" width="250" height="250"></p>
+
         <div class='subtitle'>
         	Future work
         </div> 
