@@ -46,22 +46,22 @@
   <div class='date'>
       Nov 20, 2017 </div>
     <div class="title"> Building NN, RBM, autoencoder, and RNN from scratch </div>
-    <p> In this blog, we discussed how to build some simple neural networks from scratch. The full code can be found <a href="https://github.com/longw010/DL_Notes"> here</a>. </p>
+    <p> In this blog, we discussed how to build some simple neural networks from scratch. Find the full implementation<a class="one" href="https://github.com/longw010/DL_Notes"> here</a>. </p>
 
     <div class="subtitle"> NN </div>
-    Implement the backpropagation algorithm with sigmoid activation function in a single-layer neural network. The output layer should be a softmax output over 10 classes corresponding to 10 classes of handwritten digits. 
-    <p> Detailed implementation is <a href="https://github.com/longw010/DL_Notes/blob/master/rnn/train.py"> here </a> . </p>
+    <p> Implement the backpropagation algorithm with sigmoid activation function in a single-layer neural network. The output layer should be a softmax output over 10 classes corresponding to 10 classes of handwritten digits. </p>
+    <p> Detailed implementation is <a class="one" href="https://github.com/longw010/DL_Notes/blob/master/rnn/train.py"> here</a> . </p>
     
     <div class='subtitle'> Unsupervised learning : RBM, autoencoder </div>
-    <p>Train an RBM model with 100 hidden units, starting with CD with k = 1 step. For initialization use samples from a normal distribution with mean 0 and standard deviation 0.1. </p>
-    <p> Detailed implementation is <a href="https://github.com/longw010/DL_Notes/blob/master/rnn/train.py"> here </a> . </p>
+    <p>Train an RBM model with 100 hidden units, starting with the CD with k = 1 step. For initialization use samples from a normal distribution with mean 0 and standard deviation 0.1. </p>
+    <p> Detailed implementation is <a class="one" href="https://github.com/longw010/DL_Notes/blob/master/rnn/train.py"> here </a> . </p>
 
     <div class='subtitle'> RNN </div>
-    <p> A 4-gram language model using a Multilayer Perceptron with an embedding layer is built according to Figure 1. For each of the 4 word combinations, the next word is predicted given the first three words.  
+    <p> A 4-gram language model using a Multilayer Perceptron with an embedding layer is built according to Figure 1. For each of the 4-word combinations, the next word is predicted given the first three words.  
     <embed src="/blog/2017/DeepLearning/rnn.png"> </p>
-    <div class='subsubtitle'> Preprossessing: </div>
-    We first sorted the tokens by frequency, and only saved the top 8000 tokens; then we added "START" and "END" tags to the start and end of sentences. For the tokens that are not in the 8000 word of bags above, they are replaced by "UNK".
-    <p> Detailed implementation is <a href="https://github.com/longw010/DL_Notes/blob/master/rnn/train.py"> here </a> . </p>
+    <div class='subsubtitle'> Preprocessing:: </div>
+    <p>We first sorted the tokens by frequency, and only saved the top 8000 tokens; then we added "START" and "END" tags to the start and end of sentences. For the tokens that are not in the 8000 word of bags above, they are replaced by "UNK". </p>
+    <p> Detailed implementation is <a class="one" href="https://github.com/longw010/DL_Notes/blob/master/rnn/train.py"> here</a> . </p>
 
 	</div>
 
