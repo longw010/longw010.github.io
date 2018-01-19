@@ -166,7 +166,7 @@ span.emph {
 a.one:link { COLOR: #538cc6; TEXT-DECORATION: none }
 a.one:visited { COLOR: #538cc6; TEXT-DECORATION: none }
 a.one:active { COLOR: #538cc6; TEXT-DECORATION: none }
-a.one:hover { COLOR:  #538cc6; TEXT-DECORATION: none  }
+a.one:hover { COLOR:  #538cc6; TEXT-DECORATION: underline  }
 a.two:link { COLOR: #4D5053; TEXT-DECORATION: none }
 a.two:visited { COLOR: inherit; TEXT-DECORATION: none }
 a.two:active { COLOR: inherit; TEXT-DECORATION: none }
