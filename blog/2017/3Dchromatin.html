@@ -57,23 +57,23 @@
     	<div class='title'> <a class='two' href='https://longw010.github.io/blog/2017/3Dchromatin.html'> Toy models to reconstruct 3D chromatin structure </a>
     	</div>
     	<div class='subword'> <p>
-			In this blog, we used toy models to reconstruct 3D chromatin structure. This problem is posed as optimization problem. The input is 3D distance derived from Hi-C and FISH data and the output is the relative coordinates in 3D space.
+			In this blog, we used toy models to reconstruct 3D chromatin structure. This problem is posed as an optimization problem. The input is 3D distance derived from Hi-C and FISH data, and the output is the relative coordinates in 3D space.
         </p>
 
         <div class='subtitle'>
         Background
         </div>
         <div class='subsubtitle'>Beads model </div>
-		<p> Basically, we consider the DNA sequence as a loop of bead (several consesitive sequences are one bead).</p>
+		<p> We consider the DNA sequence as a loop of beads (several consecutive sequences are one bead).</p>
 
 		<div class='subsubtitle'> Hi-C and FISH experiments </div>
-        <p> Here are the experimental procedures for Hi-C. Hi-C will return the interaction frequency of pairwise beads. Intuitively, when the distance of two beads is close, their interaction frequency is large. If the relathionship between spatial distance and interaction frequency is strictly positive correlated. We could just use the interaction frequency to reconstruct the structure. However, Hi-C data has much noise when the interaction frequency is too large or small. Since we don't know the threshold, we could integrate FISH data (the determined distance of two beads) and pose the problem as a curve fitting problem.</p>
+        <p> Here are the experimental procedures for Hi-C. Hi-C will return the interaction frequency of pairwise beads. Intuitively, when the distance of two beads is close, their interaction frequency is large. If the relationship between spatial distance and interaction frequency is strictly positive correlated. We could just use the interaction frequency to reconstruct the structure. However, Hi-C data has much noise when the interaction frequency is too large or small. Since we don't know the threshold, we could integrate FISH data (the determined distance of two beads) and pose the problem as a curve fitting problem.</p>
 
         <div class ='subtitle'> Converting beads distance to beads coordinates (Core part)</div>
 
         <div class='subsubtitle'>  Model1 </div>
 
-        <p>To pose it as an optimization problem, we want to make the pairwise distance from estimated coordinates as close as the real distance. Thus, objective function is defined using mean-squared error between real distances and calculated distances, and initial coordinates for all the positions are randomly initialized within a ball with radius 1.0.the objective function here. More precisely,
+        <p>To pose it as an optimization problem, we want to make the pairwise distance from estimated coordinates as close as the real distance. Thus, the objective function is defined using mean-squared error between actual distances and calculated distances, and initial coordinates for all the positions are randomly initialized within a ball with radius 1.0.the objective function here. More precisely,
 
         $$F_n = \sum_{i < j}\frac{(||P_i - P_j|| - D_{ij})^2}{D_{ij}^2}.$$
 
@@ -97,7 +97,7 @@
         $$F_n = \sum_{contacts, |i - j| \ne 1} (W_1 tanh(d_c^2-d_{ij}^2) \frac{F_{ij}}{totalIF} + W_2\frac{tanh(d_{ij}^2 - d_{min}^2)}{totalIF}) \\ + \sum_{non-contacts, |i - j| \ne 1} (W_3 \frac{tanh(d_{max}^2-d_{ij}^2)}{totalIF} + W_4\frac{tanh(d_{ij}^2 - d_{min}^2)}{totalIF}) \\ + \sum_{|i - j| = 1} (W_1 tanh(da_{max}^2-d_{ij}^2) \frac{IF_{max}}{totalIF} + W_2\frac{tanh(d_{ij}^2 - d_{min}^2)}{totalIF})$$</p>
 
         <p> Here dmin, dmax and damax are some parameters we chose based on prior knowledge[7]. To specify, dmin is the minimum distance between two regions, and dmax is the maximum distance between two regions. damax is the maximum distance between two adjacent regions. </p>
-  		<p> Since the derivative of objective function is easy get, we still use derivative-based method to make it more efficient. We want to maximize our objective function for this model so gradient ascent is used here. The derivative functions are: 
+  		<p> Since the derivative of objective function is easy get, we still use derivative-based method to make it more efficient. We want to maximize our objective function for this model, so the gradient ascent is used here. The derivative functions are: 
   		$$\frac{\partial F_n}{\partial d_{ij}} = \sum_{contacts, |i - j| \ne 1} (-W_1 2d_{ij} sech(d_c^2-d_{ij}^2) \frac{F_{ij}}{totalIF} + W_2 2d_{ij}\frac{sech(d_{ij}^2 - d_{min}^2)}{totalIF}) \\ + \sum_{non-contacts, |i - j| \ne 1} (-W_3 2d_{ij}\frac{sech(d_{max}^2-d_{ij}^2)}{totalIF} + W_4 2d_{ij}\frac{sech^2(d_{ij}^2 - d_{min}^2)}{totalIF}) \\ + \sum_{|i - j| = 1} (-W_1 tanh(da_{max}^2-d_{ij}^2) 2d_{ij} \frac{IF_{max}}{totalIF} + W_2\frac{tanh(d_{ij}^2 - d_{min}^2) 2d_{ij}}{totalIF})$$
 
 		$$\frac{\partial d_{ij}}{dx_i} = \frac{x_i-x_j}{\sqrt{(x_i-x_j)^2+(y_i-y_j)^2 +(z_i-z_j)^2}}$$
@@ -106,8 +106,8 @@
 		</p>
 		<p>The initialization procedure used here is the same as model 1. Different weight parameters are tested for each chromosome to get optimal solution.</p>
    
-        <div class='subtitle'> Vistualization</div>
-        <p> We found PYMOL is a good tool to vistualize the 3D structure. </p>
+        <div class='subtitle'>Visualization</div>
+        <p> We found PYMOL is a good tool to visualize the 3D structure. </p>
 
         <p> Here is the code to generate a movie for 3D structure rotating 360. </p>
         <p> <pre>
@@ -122,7 +122,7 @@ set cache_frames, 0﻿</pre>
         <div class='subtitle'>
         	Future work
         </div> 
-        <p> 1. Objective function with biological constrains. </p>
+        <p> 1. Objective function with biological constraints. </p>
         <p> 2. Robust analysis </p>
 
         <div class='subsubtitle'> Please contact me if you want the full code. </div>
