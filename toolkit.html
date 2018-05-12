@@ -1,159 +1,165 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-  <title>Long</title>
-	<meta name="google-site-verification" content="_icP2W3B6y_gFG92Dh-caUWIh_sEnE4tPu8pghzaH2w" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script>
-	$(document).ready(function(){
-	  $("a").on('click', function(event) {
-	    if (this.hash !== "") {
-	      event.preventDefault();
-	
-	      var hash = this.hash;
-	
-	      $('html, body').animate({
-	        scrollTop: $(hash).offset().top
-	      }, 500, function(){
-	        window.location.hash = hash;
-	      });
-	    }
-	  });
-	});
-	</script>
+    <title>Long</title>
+    <meta name="google-site-verification" content="_icP2W3B6y_gFG92Dh-caUWIh_sEnE4tPu8pghzaH2w" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 500, function() {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
 </head>
+
 <body>
-  <div class="banner">
-    <div id="header">
-      <div id="name">
-        <a class="two" href="https://longw010.github.io/index.html"> <img src="images/name.png" width="231" height="42" border="0"></a>
-      </div>
-      <div id="navigator">
-        <div class="nav_cell"><a class="two" href="index.html">ABOUT</a></div>
-        <div class="nav_cell"><a class="two" href="blog.html">BLOG</a></div>
-        <div class="nav_cell"><a class="two" href="toolkit.html">TOOLKIT</a></div>
-      </div>
+    <div class="banner">
+        <div id="header">
+            <div id="name">
+                <a class="two" href="https://longw010.github.io/index.html"> <img src="images/name.png" width="231" height="42" border="0"></a>
+            </div>
+            <div id="navigator">
+                <div class="nav_cell"><a class="two" href="index.html">ABOUT</a></div>
+                <div class="nav_cell"><a class="two" href="blog.html">BLOG</a></div>
+                <div class="nav_cell"><a class="two" href="toolkit.html">TOOLKIT</a></div>
+            </div>
+        </div>
     </div>
-  </div>
 
- <hr>
+    <hr>
 
+    <div id="main">
+        <div class="content">
 
+            <div>
+                <div class="date">
+                    <time pubdate datetime="2017-27-November" title="November 27, 2017"> Oct 15, 2017 </time>
+                </div>
+                <h2 class="research_title"><a class="two" href="/toolkit/2017/pdb_generation.html" rel="prefetch">How to generate PDB file from the cooredinates?</a></h2>
+                <div class="subword">
+                    The purpose of this blog is to show how to generate a valid PDB file from the coordinates.
+                </div>
+            </div>
+            </section>
 
-  <div id="main">
-    <div class="content">
-      
+            <section class="index">
+                <div>
+                    <div class="date">
+                        <p>&nbsp;</p> Oct 10, 2017 </time>
+                    </div>
+                    <h2 class="research_title"><a class="two" href="/toolkit/2017/globalRDD.html" rel="prefetch">Global var doesn't work in this context.</a></h2>
+                    <div class="subword">
+                        This blog shows a corner case that global var doesn't work in Spark.
+                    </div>
+                </div>
+            </section>
+            <section class="index">
+        </div>
 
-<div>
-<div class="date">
-<time pubdate datetime="2017-27-November" title="November 27, 2017"> Oct 15, 2017 </time></div>
-<h2 class="research_title"><a class="two" href="/toolkit/2017/pdb_generation.html" rel="prefetch">How to generate PDB file from the cooredinates?</a></h2>
-<div class="subword">
-The purpose of this blog is to show how to generate a valid PDB file from the coordinates.
-</div>
-</div>
-</section>
+        <section class="index">
+            <div>
+                <div class="date">
+                    <p>&nbsp;</p> Aug 10, 2017 </time>
+                </div>
+                <h2 class="research_title"><a class="two" href="/toolkit/2017/heartrate.html" rel="prefetch">How to extract relative heart rate curve from an ultrasound video?</a></h2>
+                <div class="subword">
+                    In this blog, I will show how to extract a relative heart rate curve from an ultrasound video. Note that it requires a green curve indicating the time-series heart rate and red node spotting the current heart rate.
+                </div>
+            </div>
+        </section>
+        <section class="index">
+    </div>
 
+    <p>&nbsp</p>
 
-<section class="index">
-<div>
-<div class="date"> <p>&nbsp;</p> Oct 10, 2017 </time></div>
-<h2 class="research_title"><a class="two" href="/toolkit/2017/globalRDD.html" rel="prefetch">Global var doesn't work in this context.</a></h2>
-<div class="subword">
-This blog shows a corner case that global var doesn't work in Spark.
-</div>
-</div>
-</section>
-<section class="index">
-</div>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
 
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
 
-<section class="index">
-<div>
-<div class="date"> <p>&nbsp;</p> Aug 10, 2017 </time></div>
-<h2 class="research_title"><a class="two" href="/toolkit/2017/heartrate.html" rel="prefetch">How to extract relative heart rate curve from an ultrasound video?</a></h2>
-<div class="subword">
-In this blog, I will show how to extract a relative heart rate curve from an ultrasound video. Note that it requires a green curve indicating the time-series heart rate and red node spotting the current heart rate.
-</div>
-</div>
-</section>
-<section class="index">
-</div>
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 
-<p>&nbsp</p>
+    <hr>
+    <div style="margin-top: 10px; text-align: center; font-size: 14px;">
+        <section class="pagination" style="text-align:center">
+        </section>
+        </article>
+        <footer class="site-footer">
+            <div class="contact">
+                <a href="https://github.com/longw010/">
+                    <div class='card'>
+                        <img src="images/github2.png" width="38" height="38" alt='Card Back'>
+                        <img src="images/github.png" width="38" height="38" class="img-top" alt='Card Front'>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/lwang010/">
+                    <div class='card'>
+                        <img src="images/linkedin2.png" width="38" height="38" alt='Card Back'>
+                        <img src="images/linkedin.png" width="38" height="38" class="img-top" alt='Card Front'>
+                    </div>
+                </a>
+                <a href="mailto:longw@andrew.cmu.edu">
+                    <div class='card'>
+                        <img src="images/mail2.png" width="38" height="38" alt='Card Back'>
+                        <img src="images/mail.png" width="38" height="38" class="img-top" alt='Card Front'>
+                    </div>
+                </a>
+            </div>
+            Copyright &copy; 2016 - 2018, Long Wang. All rights reserved.
+            <br>
+            <script language="Javascript">
+                document.write("Last Updated: " + document.lastModified + "");
+            </SCRIPT>
+    </div>
 
-<script>
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
-    }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-</script>
-
-
-<hr>
-<div style="margin-top: 10px; text-align: center; font-size: 14px;">
-<section class="pagination" style="text-align:center">
-</section>
-</article>
-<footer class="site-footer">
-<div class="contact">
-<a href="https://github.com/longw010/">
-<div class='card'>
-<img src="images/github2.png" width="38" height="38" alt='Card Back'>
-<img src="images/github.png" width="38" height="38" class="img-top" alt='Card Front'>
-</div>
-</a>
-<a href="https://www.linkedin.com/in/lwang010/">
-<div class='card'>
-<img src="images/linkedin2.png" width="38" height="38" alt='Card Back'>
-<img src="images/linkedin.png" width="38" height="38" class="img-top" alt='Card Front'>
-</div>
-</a>
-<a href="mailto:longw@andrew.cmu.edu">
-	<div class='card'>
-<img src="images/mail2.png" width="38" height="38" alt='Card Back'>
-<img src="images/mail.png" width="38" height="38" class="img-top" alt='Card Front'>
-</div>
-</a> 
-</div>
-  Copyright &copy; 2016 - 2018, Long Wang. All rights reserved.<br>
-  <script language="Javascript">
-	document.write("Last Updated: " + document.lastModified +"");
-</SCRIPT>
-  </div>
-
-	<!-- Start of StatCounter Code for Default Guide -->
-	<script type="text/javascript">
-		var sc_project=10595714; 
-		var sc_invisible=1; 
-		var sc_security="ee39bc4f"; 
-		var scJsHost = (("https:" == document.location.protocol) ?
-			"https://secure." : "http://www.");
-		document.write("<sc"+"ript type='text/javascript' src='" +
-			scJsHost+
-			"statcounter.com/counter/counter.js'></"+"script>");
-	</script>
-	<noscript><div class="statcounter"><a title="shopify visitor
-		statistics" href="http://statcounter.com/shopify/"
-		target="_blank"><img class="statcounter"
-		src="http://c.statcounter.com/10595714/0/ee39bc4f/1/"
-		alt="shopify visitor statistics"></a></div></noscript>
-		<!-- End of StatCounter Code for Default Guide -->
+    <!-- Start of StatCounter Code for Default Guide -->
+    <script type="text/javascript">
+        var sc_project = 10595714;
+        var sc_invisible = 1;
+        var sc_security = "ee39bc4f";
+        var scJsHost = (("https:" == document.location.protocol) ?
+            "https://secure." : "http://www.");
+        document.write("<sc" + "ript type='text/javascript' src='" +
+            scJsHost +
+            "statcounter.com/counter/counter.js'></" + "script>");
+    </script>
+    <noscript>
+        <div class="statcounter">
+            <a title="shopify visitor
+		statistics" href="http://statcounter.com/shopify/" target="_blank"><img class="statcounter" src="http://c.statcounter.com/10595714/0/ee39bc4f/1/" alt="shopify visitor statistics"></a>
+        </div>
+    </noscript>
+    <!-- End of StatCounter Code for Default Guide -->
 
 </body>
+
 </html>

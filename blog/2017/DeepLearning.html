@@ -1,122 +1,125 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-  <title>Long</title>
-	<meta name="google-site-verification" content="_icP2W3B6y_gFG92Dh-caUWIh_sEnE4tPu8pghzaH2w" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script>
-	$(document).ready(function(){
-	  $("a").on('click', function(event) {
-	    if (this.hash !== "") {
-	      event.preventDefault();
-	
-	      var hash = this.hash;
-	
-	      $('html, body').animate({
-	        scrollTop: $(hash).offset().top
-	      }, 500, function(){
-	        window.location.hash = hash;
-	      });
-	    }
-	  });
-	});
-	</script>
+    <title>Long</title>
+    <meta name="google-site-verification" content="_icP2W3B6y_gFG92Dh-caUWIh_sEnE4tPu8pghzaH2w" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 500, function() {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
-  <div class="banner">
-    <div id="header">
-      <div id="name">
-        <a class="two" href="https://longw010.github.io/index.html"> <img src="../../images/name.png" width="231" height="42" border="0"></a>
-      </div>
-      <div id="navigator">
-        <div class="nav_cell"><a class="two" href="../../index.html">ABOUT</a></div>
-        <div class="nav_cell"><a class="two" href="../../blog.html">BLOG</a></div>
-        <div class="nav_cell"><a class="two" href="../../toolkit.html">TOOLKIT</a></div>
-      </div>
+    <div class="banner">
+        <div id="header">
+            <div id="name">
+                <a class="two" href="https://longw010.github.io/index.html"> <img src="../../images/name.png" width="231" height="42" border="0"></a>
+            </div>
+            <div id="navigator">
+                <div class="nav_cell"><a class="two" href="../../index.html">ABOUT</a></div>
+                <div class="nav_cell"><a class="two" href="../../blog.html">BLOG</a></div>
+                <div class="nav_cell"><a class="two" href="../../toolkit.html">TOOLKIT</a></div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <hr>
+    <hr>
 
-  <div id="main">
-  <div class='date'>
-      Nov 20, 2017 </div>
-    <div class="title"> <a class='two' href='https://longw010.github.io/blog/2017/DeepLearning.html' >Building NN, RBM, autoencoder, and RNN from scratch </a> </div>
-    <p> In this blog, we discussed how to build some simple neural networks from scratch. Find the full implementation<a class="one" href="https://github.com/longw010/DL_Notes"> here</a>. </p>
+    <div id="main">
+        <div class='date'>
+            Nov 20, 2017 </div>
+        <div class="title"> <a class='two' href='https://longw010.github.io/blog/2017/DeepLearning.html'>Building NN, RBM, autoencoder, and RNN from scratch </a> </div>
+        <p> In this blog, we discussed how to build some simple neural networks from scratch. Find the full implementation<a class="one" href="https://github.com/longw010/DL_Notes"> here</a>. </p>
 
-    <div class="subtitle"> NN </div>
-    <p> Implement the backpropagation algorithm with sigmoid activation function in a single-layer neural network. The output layer should be a softmax output over 10 classes corresponding to 10 classes of handwritten digits. </p>
-    <p> Detailed implementation is <a class="one" href="https://github.com/longw010/DL_Notes/blob/master/rnn/train.py"> here</a>. </p>
-    
-    <div class='subtitle'> Unsupervised learning: RBM, autoencoder </div>
-    <p>Train an RBM model with 100 hidden units, starting with the CD with k = 1 step. For initialization use samples from a normal distribution with mean 0 and standard deviation 0.1. </p>
-    <p> Detailed implementation is <a class="one" href="https://github.com/longw010/DL_Notes/blob/master/rnn/train.py"> here</a>. </p>
+        <div class="subtitle"> NN </div>
+        <p> Implement the backpropagation algorithm with sigmoid activation function in a single-layer neural network. The output layer should be a softmax output over 10 classes corresponding to 10 classes of handwritten digits. </p>
+        <p> Detailed implementation is <a class="one" href="https://github.com/longw010/DL_Notes/blob/master/rnn/train.py"> here</a>. </p>
 
-    <div class='subtitle'> RNN </div>
-    <p> A 4-gram language model using a Multilayer Perceptron with an embedding layer is built according to Figure 1. For each of the 4-word combinations, the next word is predicted given the first three words.  
-   </p>
-   <img src="/blog/2017/DeepLearning/rnn.png" width="250" height="250">
-   
-    <div class='subsubtitle'> Preprocessing: </div>
-    <p>We first sorted the tokens by frequency, and only saved the top 8000 tokens; then we added "START" and "END" tags to the start and end of sentences. For the tokens that are not in the 8000 word of bags above, they are replaced by "UNK". </p>
-    <p> Detailed implementation is <a class="one" href="https://github.com/longw010/DL_Notes/blob/master/rnn/train.py"> here</a>. </p>
+        <div class='subtitle'> Unsupervised learning: RBM, autoencoder </div>
+        <p>Train an RBM model with 100 hidden units, starting with the CD with k = 1 step. For initialization use samples from a normal distribution with mean 0 and standard deviation 0.1. </p>
+        <p> Detailed implementation is <a class="one" href="https://github.com/longw010/DL_Notes/blob/master/rnn/train.py"> here</a>. </p>
 
-	</div>
+        <div class='subtitle'> RNN </div>
+        <p> A 4-gram language model using a Multilayer Perceptron with an embedding layer is built according to Figure 1. For each of the 4-word combinations, the next word is predicted given the first three words.
+        </p>
+        <img src="/blog/2017/DeepLearning/rnn.png" width="250" height="250">
 
+        <div class='subsubtitle'> Preprocessing: </div>
+        <p>We first sorted the tokens by frequency, and only saved the top 8000 tokens; then we added "START" and "END" tags to the start and end of sentences. For the tokens that are not in the 8000 word of bags above, they are replaced by "UNK". </p>
+        <p> Detailed implementation is <a class="one" href="https://github.com/longw010/DL_Notes/blob/master/rnn/train.py"> here</a>. </p>
 
-<hr>
-<div style="margin-top: 10px; text-align: center; font-size: 14px;">
-<section class="pagination" style="text-align:center">
-</section>
-</article>
-<footer class="site-footer">
-<div class="contact">
-<a href="https://github.com/longw010/">
-<div class='card'>
-<img src="../../images/github2.png" width="38" height="38" alt='Card Back'>
-<img src="../../images/github.png" width="38" height="38" class="img-top" alt='Card Front'>
-</div>
-</a>
-<a href="https://www.linkedin.com/in/lwang010/">
-<div class='card'>
-<img src="../../images/linkedin2.png" width="38" height="38" alt='Card Back'>
-<img src="../../images/linkedin.png" width="38" height="38" class="img-top" alt='Card Front'>
-</div>
-</a>
-<a href="mailto:longw@andrew.cmu.edu">
-  <div class='card'>
-<img src="../../images/mail2.png" width="38" height="38" alt='Card Back'>
-<img src="../../images/mail.png" width="38" height="38" class="img-top" alt='Card Front'>
-</div>
-</a> 
-</div>
-  Copyright &copy; 2016 - 2018, Long Wang. All rights reserved.<br>
-  <script language="Javascript">
-  document.write("Last Updated: " + document.lastModified +"");
-</SCRIPT>
-  </div>
+    </div>
 
-	<!-- Start of StatCounter Code for Default Guide -->
-	<script type="text/javascript">
-		var sc_project=10595714; 
-		var sc_invisible=1; 
-		var sc_security="ee39bc4f"; 
-		var scJsHost = (("https:" == document.location.protocol) ?
-			"https://secure." : "http://www.");
-		document.write("<sc"+"ript type='text/javascript' src='" +
-			scJsHost+
-			"statcounter.com/counter/counter.js'></"+"script>");
-	</script>
-	<noscript><div class="statcounter"><a title="shopify visitor
-		statistics" href="http://statcounter.com/shopify/"
-		target="_blank"><img class="statcounter"
-		src="http://c.statcounter.com/10595714/0/ee39bc4f/1/"
-		alt="shopify visitor statistics"></a></div></noscript>
-		<!-- End of StatCounter Code for Default Guide -->
+    <hr>
+    <div style="margin-top: 10px; text-align: center; font-size: 14px;">
+        <section class="pagination" style="text-align:center">
+        </section>
+        </article>
+        <footer class="site-footer">
+            <div class="contact">
+                <a href="https://github.com/longw010/">
+                    <div class='card'>
+                        <img src="../../images/github2.png" width="38" height="38" alt='Card Back'>
+                        <img src="../../images/github.png" width="38" height="38" class="img-top" alt='Card Front'>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/lwang010/">
+                    <div class='card'>
+                        <img src="../../images/linkedin2.png" width="38" height="38" alt='Card Back'>
+                        <img src="../../images/linkedin.png" width="38" height="38" class="img-top" alt='Card Front'>
+                    </div>
+                </a>
+                <a href="mailto:longw@andrew.cmu.edu">
+                    <div class='card'>
+                        <img src="../../images/mail2.png" width="38" height="38" alt='Card Back'>
+                        <img src="../../images/mail.png" width="38" height="38" class="img-top" alt='Card Front'>
+                    </div>
+                </a>
+            </div>
+            Copyright &copy; 2016 - 2018, Long Wang. All rights reserved.
+            <br>
+            <script language="Javascript">
+                document.write("Last Updated: " + document.lastModified + "");
+            </SCRIPT>
+    </div>
+
+    <!-- Start of StatCounter Code for Default Guide -->
+    <script type="text/javascript">
+        var sc_project = 10595714;
+        var sc_invisible = 1;
+        var sc_security = "ee39bc4f";
+        var scJsHost = (("https:" == document.location.protocol) ?
+            "https://secure." : "http://www.");
+        document.write("<sc" + "ript type='text/javascript' src='" +
+            scJsHost +
+            "statcounter.com/counter/counter.js'></" + "script>");
+    </script>
+    <noscript>
+        <div class="statcounter">
+            <a title="shopify visitor
+    statistics" href="http://statcounter.com/shopify/" target="_blank"><img class="statcounter" src="http://c.statcounter.com/10595714/0/ee39bc4f/1/" alt="shopify visitor statistics"></a>
+        </div>
+    </noscript>
+    <!-- End of StatCounter Code for Default Guide -->
 
 </body>
+
 </html>
