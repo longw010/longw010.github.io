@@ -163,6 +163,34 @@ span.emph {
   line-height:1.2;
 
 }
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 420px;
+    background-color: white;
+    color: #fff;
+    text-align: justify;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover 
+.tooltiptext {
+    visibility: visible;
+    font-weight: 100;
+    font-size: 13px;
+    color: #4D5053;
+    line-height:1.2;
+}
+
 a.one:link { COLOR: #538cc6; TEXT-DECORATION: none }
 a.one:visited { COLOR: #538cc6; TEXT-DECORATION: none }
 a.one:active { COLOR: #538cc6; TEXT-DECORATION: none }
