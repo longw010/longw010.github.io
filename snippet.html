@@ -51,10 +51,10 @@ ul{
 ul li a{
   text-decoration:none;
   color:#000;
-  background:url('images/sticker.png');
+  background:url('images/sticker3.jpg') no-repeat;
   display:block;
-  height:10em;
-  width:10em;
+  height:9em;
+  width:9em;
   padding:1em;
   -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
   -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
@@ -67,10 +67,13 @@ ul li{
   margin:1em;
   float:left;
 }
-ul li h2{
-  font-size:140%;
+ul li h3{
+  font-size:100%;
   font-weight:bold;
-  padding-bottom:10px;
+}
+ul li h6{
+  font-size:80%;
+  font-weight:normal;
 }
 ul li p{
   font-family:"Reenie Beanie",arial,sans-serif;
@@ -87,7 +90,7 @@ ul li:nth-child(even) a{
   -moz-transform:rotate(4deg);
   position:relative;
   top:5px;
-  background:url('images/sticker.png') ;
+  background:url('images/sticker2.jpg') no-repeat;
 }
 ul li:nth-child(3n) a{
   -o-transform:rotate(-3deg);
@@ -95,7 +98,7 @@ ul li:nth-child(3n) a{
   -moz-transform:rotate(-3deg);
   position:relative;
   top:-5px;
-  background:url('images/sticker.png');
+  background:url('images/sticker1.jpg') no-repeat;
 }
 ul li:nth-child(5n) a{
   -o-transform:rotate(5deg);
@@ -121,18 +124,15 @@ ol li a{color:#fff;}
 </head>
 <body>
   <ol>
-    <li><a href="step1.html">Step #1</a></li>
-    <li><a href="step2.html">Step #2</a></li>
-    <li><a href="step3.html">Step #3</a></li>
-    <li><a href="step4.html">Step #4</a></li>
-    <li><strong>Step #5</strong></li>
+    <li><a href="snippet_dp">Fixme</a></li> 
+    <li><strong>Others</strong></li>
     <li><a href="#"></a></li>
   </ol>
   <ul>
     <li>
       <a class="two" href="/snippet/2018/ETL.html" rel="prefetch">
-        <h3>Tips when running ETL.</h3>
-        <h6>Set all non-numerical columns to json format.</h6>
+        <h3>Tips when running ETL</h3>
+        <h6>Set all non-numerical columns to json format. </h6>
       </a>
     </li>
     <li>
@@ -149,13 +149,13 @@ ol li a{color:#fff;}
     </li>
     <li>
       <a class="two" href="/snippet/2017/pdb_generation.html" rel="prefetch">
-        <h3>Generate a PDB file from the cooredinates.</h3>
+        <h3>PDB generator</h3>
         <h6>A script to generate a valid PDB file from the coordinates.</h6>
       </a>
     </li>
     <li>
       <a class="two" href="/snippet/2018/ETL.html" rel="prefetch">
-        <h3>Pydicom and Dicom packages at Python.</h3>
+        <h3>Pydicom & Dicom</h3>
         <h6>Some difference between pydicom and dicom.</h6>
       </a>
     </li>
