@@ -35,7 +35,7 @@
       <div id="navigator">
         <div class="nav_cell"><a class="two" href="../../index.html">ABOUT</a></div>
         <div class="nav_cell"><a class="two" href="../../blog.html">BLOG</a></div>
-        <div class="nav_cell"><a class="two" href="../../toolkit.html">TOOLKIT</a></div>
+        <div class="nav_cell"><a class="two" href="../../snippet.html">SNIPPET</a></div>
       </div>
     </div>
   </div>
@@ -45,34 +45,25 @@
   <div id="main">
     <div class="content">
     <div class='date'>
-    Aug 10, 2017 </div>
-    <div class="title"> <a class="two" href="https://longw010.github.io/toolkit/2017/heartrate.html"> How to extract relative heart rate curve from an ultrasound video?</a>
+      Dec 10, 2017 </div>
+    <div class="title"> <a class="two" href="https://longw010.github.io/toolkit/2017/pdb_generation.html"> How to generate PDB file from the coordinates? </a>
  </div>
 
-	<p>
-	In this blog, I will show how to extract a relative heart rate curve from an ultrasound video. Note that it requires a green curve indicating the time-series heart rate and red node spotting the current heart rate. </p>
+	<p> The purpose of this blog is to show how to generate a valid PDB file from the coordinates. </p>
 
-	<p> An example frame is the following: </p>
-	<p><img src='embed/ultrasound.jpg'></p>
-	
-	<p>(image credit: <a class="one" href="https://www.brookhavenheart.com/doppler-ultrasound-doppler-effect-ultrasonography/">click here</a>)</p>
+	<p> We separated the PDB file into two parts: lines started from "ATOM" and lines started from "CONNECT". When you do the generation, you may need to check: </p>
+	<p> 1. the space between two elements in one line is consistent with  <a class="one" href="http://www.bmrb.wisc.edu/standards/pdb_3-3_atom_record_example.pdf"> PDB format</a>.   </p>
+	<p> 2. add "END" at the end of the file. </p>
 
-	<p> The basic idea is to spot the red nodes in each frame at the video and combine to the whole curve. </p>
-
-	<p> A tricky part is how to dismiss all irrelevant points. </p>
-
-
-	<p>See the implementation here.</p>
 	<p>&nbsp;</p>
 	<p>
-		<script src="https://gist.github.com/longw010/9802008152b9412e4d0ec51f2f7fad0b.js"></script>
+		<script src="https://gist.github.com/longw010/cc8290901b99385b263f7aa5b0a9a9f0.js"></script>
 		<noscript>
 			<pre>
     		</pre>
  		</noscript>
 	</p>
-
-	Credit from <a class="one" href="https://semantic.md/">SemanticMD </a>.
+	</div>
 
             <br>
 
@@ -81,7 +72,7 @@
 <script src="https://longw010.github.io/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id:'08102017',
+  id:'12102017v2',
   owner: 'longw010',
   repo: 'longw010.github.io',
   oauth: {
@@ -91,6 +82,7 @@ var gitment = new Gitment({
 })
 gitment.render('container1')
 </script>
+
 <hr>
 <div style="margin-top: 10px; text-align: center; font-size: 14px;">
 <section class="pagination" style="text-align:center">
