@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!DOCTYPE HTML>
 <html>
 
@@ -42,54 +43,123 @@
     </div>
 
     <hr>
-
-    <div id="main">
-        <div class="content">
-
-            <section class="index">
-            <div>
-                <h2 class="research_title"><a class="two" href="/snippet/2018/ETL.html" rel="prefetch">Pydicom and Dicom packages at Python</a></h2>
-                <div class="subword">
-                    Some difference between pydicom and dicom.
-                </div>
-            </div>
-            </section>
-
-            <section class="index">
-            <div>
-                <h2 class="research_title"><a class="two" href="/snippet/2018/MySQLEngine.html.html" rel="prefetch">Tips in MySQL</a></h2>
-                <div class="subword">
-                    Set engine when loading the data.
-                </div>
-            </div>
-            </section>
-
-            <section class="index">
-            <div>
-                <h2 class="research_title"><a class="two" href="/snippet/2018/ETL.html" rel="prefetch">Tips when running ETL</a></h2>
-                <div class="subword">
-                    Set all non-numerical columns to json format.
-                </div>
-            </div>
-            </section>
-
-            <section class="index">
-            <div>
-                <h2 class="subtitle"><a class="two" href="/snippet/2017/pdb_generation.html" rel="prefetch"><div class="tooltip">Generate a PDB file from the cooredinates.
-                <span class="tooltiptext">
-                    A script to generate a valid PDB file from the coordinates.
-                </span></div></a></h2>
-            </section>
-
-            <section class="index">
-                <div>
-                    <h2 class="subtitle"><a class="two" href="/snippet/2017/globalRDD.html" rel="prefetch"><div class="tooltip">Global variables in Spark<span class="tooltiptext">A corner case that global var doesn't work in Spark.</span></div></a></h2>
-                </div>
-            </section>
-            <section class="index">
-        </div>
-
-    <p>&nbsp</p>
+<style type="text/css">
+ul{
+  overflow:hidden;
+  padding:3em;
+}
+ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+ul li{
+  margin:1em;
+  float:left;
+}
+ul li h2{
+  font-size:140%;
+  font-weight:bold;
+  padding-bottom:10px;
+}
+ul li p{
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:180%;
+}
+ul li a{
+  -webkit-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+}
+ul li:nth-child(even) a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+  background:#cfc;
+}
+ul li:nth-child(3n) a{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  background:#ccf;
+}
+ul li:nth-child(5n) a{
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+}
+ul li a:hover,ul li a:focus{
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+ol{text-align:center;}
+ol li{display:inline;padding-right:1em;}
+ol li a{color:#fff;}
+</style>
+</head>
+<body>
+  <ol>
+    <li><a href="step1.html">Step #1</a></li>
+    <li><a href="step2.html">Step #2</a></li>
+    <li><a href="step3.html">Step #3</a></li>
+    <li><a href="step4.html">Step #4</a></li>
+    <li><strong>Step #5</strong></li>
+    <li><a href="#"></a></li>
+  </ol>
+  <ul>
+    <li>
+      <a class="two" href="/snippet/2018/ETL.html" rel="prefetch">
+        <h3>Tips when running ETL.</h3>
+        <h6>Set all non-numerical columns to json format.</h6>
+      </a>
+    </li>
+    <li>
+        <a class="two" href="/snippet/2018/MySQLEngine.html.html" rel="prefetch">
+        <h3>Tips in MySQL</h3>
+        <h6>Set all non-numerical columns to json format.</h6>
+      </a>
+    </li>
+    <li>
+      <a class="two" href="/snippet/2017/globalRDD.html" rel="prefetch">
+        <h3>Global variables in Spark</h3>
+        <h6>A corner case that global var doesn't work in Spark.</h6>
+      </a>
+    </li>
+    <li>
+      <a class="two" href="/snippet/2017/pdb_generation.html" rel="prefetch">
+        <h3>Generate a PDB file from the cooredinates.</h3>
+        <h6>A script to generate a valid PDB file from the coordinates.</h6>
+      </a>
+    </li>
+    <li>
+      <a class="two" href="/snippet/2018/ETL.html" rel="prefetch">
+        <h3>Pydicom and Dicom packages at Python.</h3>
+        <h6>Some difference between pydicom and dicom.</h6>
+      </a>
+    </li>
+  </ul>
 
     <script>
         // When the user scrolls down 20px from the top of the document, show the button
@@ -159,7 +229,7 @@
     <noscript>
         <div class="statcounter">
             <a title="shopify visitor
-		statistics" href="http://statcounter.com/shopify/" target="_blank"><img class="statcounter" src="http://c.statcounter.com/10595714/0/ee39bc4f/1/" alt="shopify visitor statistics"></a>
+    statistics" href="http://statcounter.com/shopify/" target="_blank"><img class="statcounter" src="http://c.statcounter.com/10595714/0/ee39bc4f/1/" alt="shopify visitor statistics"></a>
         </div>
     </noscript>
     <!-- End of StatCounter Code for Default Guide -->
