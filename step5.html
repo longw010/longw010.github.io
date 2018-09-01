@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Long</title>
+    <meta name="google-site-verification" content="_icP2W3B6y_gFG92Dh-caUWIh_sEnE4tPu8pghzaH2w" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 500, function() {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="banner">
+        <div id="header">
+            <div id="name">
+                <a class="two" href="https://longw010.github.io/index.html"> <img src="images/name.png" width="231" height="42" border="0"></a>
+            </div>
+            <div id="navigator">
+                <div class="nav_cell"><a class="two" href="index.html">ABOUT</a></div>
+                <div class="nav_cell"><a class="two" href="blog.html">BLOG</a></div>
+                <div class="nav_cell"><a class="two" href="snippet.html">SNIPPET</a></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+<style type="text/css">
+ul{
+  overflow:hidden;
+  padding:3em;
+}
+ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+ul li{
+  margin:1em;
+  float:left;
+}
+ul li h2{
+  font-size:140%;
+  font-weight:bold;
+  padding-bottom:10px;
+}
+ul li p{
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:180%;
+}
+ul li a{
+  -webkit-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+}
+ul li:nth-child(even) a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+  background:#cfc;
+}
+ul li:nth-child(3n) a{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  background:#ccf;
+}
+ul li:nth-child(5n) a{
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+}
+ul li a:hover,ul li a:focus{
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+ol{text-align:center;}
+ol li{display:inline;padding-right:1em;}
+ol li a{color:#fff;}
+</style>
+</head>
+<body>
+  <ol>
+    <li><a href="step1.html">Step #1</a></li>
+    <li><a href="step2.html">Step #2</a></li>
+    <li><a href="step3.html">Step #3</a></li>
+    <li><a href="step4.html">Step #4</a></li>
+    <li><strong>Step #5</strong></li>
+    <li><a href="#"></a></li>
+  </ol>
+  <ul>
+    <li>
+      <a class="two" href="/snippet/2018/ETL.html" rel="prefetch">
+        <h3>Tips when running ETL.</h3>
+        <h6>Set all non-numerical columns to json format.</h6>
+      </a>
+    </li>
+    <li>
+        <a class="two" href="/snippet/2018/MySQLEngine.html.html" rel="prefetch">
+        <h3>Tips in MySQL</h3>
+        <h6>Set all non-numerical columns to json format.</h6>
+      </a>
+    </li>
+    <li>
+      <a class="two" href="/snippet/2017/globalRDD.html" rel="prefetch">
+        <h3>Global variables in Spark</h3>
+        <h6>A corner case that global var doesn't work in Spark.</h6>
+      </a>
+    </li>
+    <li>
+      <a class="two" href="/snippet/2017/pdb_generation.html" rel="prefetch">
+        <h3>Generate a PDB file from the cooredinates.</h3>
+        <h6>A script to generate a valid PDB file from the coordinates.</h6>
+      </a>
+    </li>
+    <li>
+      <a class="two" href="/snippet/2018/ETL.html" rel="prefetch">
+        <h3>Pydicom and Dicom packages at Python.</h3>
+        <h6>Some difference between pydicom and dicom.</h6>
+      </a>
+    </li>
+  </ul>
+
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    <hr>
+    <div style="margin-top: 10px; text-align: center; font-size: 14px;">
+        <section class="pagination" style="text-align:center">
+        </section>
+        </article>
+        <footer class="site-footer">
+            <div class="contact">
+                <a href="https://github.com/longw010/">
+                    <div class='card'>
+                        <img src="images/github2.png" width="38" height="38" alt='Card Back'>
+                        <img src="images/github.png" width="38" height="38" class="img-top" alt='Card Front'>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/lwang010/">
+                    <div class='card'>
+                        <img src="images/linkedin2.png" width="38" height="38" alt='Card Back'>
+                        <img src="images/linkedin.png" width="38" height="38" class="img-top" alt='Card Front'>
+                    </div>
+                </a>
+                <a href="mailto:lwang010@gmail.com">
+                    <div class='card'>
+                        <img src="images/mail2.png" width="38" height="38" alt='Card Back'>
+                        <img src="images/mail.png" width="38" height="38" class="img-top" alt='Card Front'>
+                    </div>
+                </a>
+            </div>
+            Copyright &copy; 2016 - 2018, Long Wang. All rights reserved.
+            <br>
+            <script language="Javascript">
+                document.write("Last Updated: " + document.lastModified + "");
+            </SCRIPT>
+    </div>
+
+    <!-- Start of StatCounter Code for Default Guide -->
+    <script type="text/javascript">
+        var sc_project = 10595714;
+        var sc_invisible = 1;
+        var sc_security = "ee39bc4f";
+        var scJsHost = (("https:" == document.location.protocol) ?
+            "https://secure." : "http://www.");
+        document.write("<sc" + "ript type='text/javascript' src='" +
+            scJsHost +
+            "statcounter.com/counter/counter.js'></" + "script>");
+    </script>
+    <noscript>
+        <div class="statcounter">
+            <a title="shopify visitor
+    statistics" href="http://statcounter.com/shopify/" target="_blank"><img class="statcounter" src="http://c.statcounter.com/10595714/0/ee39bc4f/1/" alt="shopify visitor statistics"></a>
+        </div>
+    </noscript>
+    <!-- End of StatCounter Code for Default Guide -->
+
+</body>
+
+</html>
