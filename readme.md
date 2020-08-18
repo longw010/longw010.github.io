@@ -5,6 +5,15 @@ This is the repo for [longw's personal blog](https://longw010.github.io).
 
 ### Updates:
 
+- 20200818
+TODO:
+- [ ] make the page modulable.
+
+<p>- reproduce 50 articles at Github and write blogs for the problems I met; also updated at Medium </p>
+<p>- try more great tools and wrote blogs about user experiments on that </p>
+<p>- make notes on interesting pre/post/training tricks from kaggle and write blogs on that </p>
+<p>- keep notes on the common tips (problem and how to solve it) as QA/How-to at SNIPPET</p>
+
 - 20180512
 
 #####[Add gitment comment systems for each blog](https://github.com/aimingoo/gitmint)
