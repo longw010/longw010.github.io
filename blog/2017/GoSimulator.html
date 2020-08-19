@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="../../css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $("a").on('click', function(event) {
+        $(document).ready(function () {
+            $("a").on('click', function (event) {
                 if (this.hash !== "") {
                     event.preventDefault();
 
@@ -18,7 +18,7 @@
 
                     $('html, body').animate({
                         scrollTop: $(hash).offset().top
-                    }, 500, function() {
+                    }, 500, function () {
                         window.location.hash = hash;
                     });
                 }
@@ -31,7 +31,8 @@
     <div class="banner">
         <div id="header">
             <div id="name">
-                <a class="two" href="https://longw010.github.io/index.html"> <img src="../../images/name.png" width="231" height="42" border="0"></a>
+                <a class="two" href="https://longw010.github.io/index.html"> <img src="../../images/name.png"
+                        width="231" height="42" border="0"></a>
             </div>
             <div id="navigator">
                 <div class="nav_cell"><a class="two" href="../../index.html">ABOUT</a></div>
@@ -47,32 +48,37 @@
         <div class="content">
             <div class='date'>
                 Mar 10, 2017 </div>
-            <div class="title"> <a class='two' href='https://longw010.github.io/blog/2017/GoSimulator.html'> A lightweight micro-colony simulator </a> </div>
+            <div class="title"> <a class='two' href='https://longw010.github.io/blog/2017/GoSimulator.html'> A
+                    lightweight micro-colony simulator </a> </div>
 
-            <p> In this tutorial, I will show how to implement a lightweight micro-colony simulator under chemotaxis. Check out the full implementation <a class="one" href='https://github.com/longw010/MicrocolonySimulation'> here</a>.</p>
+            <p> In this tutorial, I will show how to implement a lightweight micro-colony simulator under chemotaxis.
+                Check out the full implementation <a class="one"
+                    href='https://github.com/longw010/MicrocolonySimulation'> here</a>.</p>
 
             <div class='subtitle'> Simulator description </div>
-            <p> CG is a light micro-colony simulator. It is established based on six individual-based models. The models involve the bacterial random walk, cell-cell interaction, bacterial birth, death and reproduction, colony shoving and external stimulus analysis, bacteria fitness, etc. </p>
+            <p> CG is a light micro-colony simulator. It is established based on six individual-based models. The models
+                involve the bacterial random walk, cell-cell interaction, bacterial birth, death and reproduction,
+                colony shoving and external stimulus analysis, bacteria fitness, etc. </p>
 
         </div>
 
-                    <br>
+        <br>
 
-            <div id="container1"></div>
-<link rel="stylesheet" href="https://longw010.github.io/css/gitment.css">
-<script src="https://longw010.github.io/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id:'03102017',
-  owner: 'longw010',
-  repo: 'longw010.github.io',
-  oauth: {
-    client_id: '25cab6d3b1b4131c28e8',
-    client_secret: '272c00d3f6e3d40d1ad35cba7509fec6bc5aff65',
-  },
-})
-gitment.render('container1')
-</script>
+        <div id="container1"></div>
+        <link rel="stylesheet" href="https://longw010.github.io/css/gitment.css">
+        <script src="https://longw010.github.io/dist/gitment.browser.js"></script>
+        <script>
+            var gitment = new Gitment({
+                id: '03102017',
+                owner: 'longw010',
+                repo: 'longw010.github.io',
+                oauth: {
+                    client_id: '25cab6d3b1b4131c28e8',
+                    client_secret: '272c00d3f6e3d40d1ad35cba7509fec6bc5aff65',
+                },
+            })
+            gitment.render('container1')
+        </script>
 
         <hr>
         <div style="margin-top: 10px; text-align: center; font-size: 14px;">
@@ -90,7 +96,8 @@ gitment.render('container1')
                     <a href="https://www.linkedin.com/in/lwang010/">
                         <div class='card'>
                             <img src="../../images/linkedin2.png" width="38" height="38" alt='Card Back'>
-                            <img src="../../images/linkedin.png" width="38" height="38" class="img-top" alt='Card Front'>
+                            <img src="../../images/linkedin.png" width="38" height="38" class="img-top"
+                                alt='Card Front'>
                         </div>
                     </a>
                     <a href="mailto:longw@andrew.cmu.edu">
@@ -107,24 +114,9 @@ gitment.render('container1')
                 </SCRIPT>
         </div>
 
-        <!-- Start of StatCounter Code for Default Guide -->
-        <script type="text/javascript">
-            var sc_project = 10595714;
-            var sc_invisible = 1;
-            var sc_security = "ee39bc4f";
-            var scJsHost = (("https:" == document.location.protocol) ?
-                "https://secure." : "http://www.");
-            document.write("<sc" + "ript type='text/javascript' src='" +
-                scJsHost +
-                "statcounter.com/counter/counter.js'></" + "script>");
-        </script>
-        <noscript>
-            <div class="statcounter">
-                <a title="shopify visitor
-		statistics" href="http://statcounter.com/shopify/" target="_blank"><img class="statcounter" src="http://c.statcounter.com/10595714/0/ee39bc4f/1/" alt="shopify visitor statistics"></a>
-            </div>
-        </noscript>
-        <!-- End of StatCounter Code for Default Guide -->
+        <head>
+            <link rel="import" href="footnote.html">
+        </head>
 
 </body>
 

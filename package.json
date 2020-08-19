@@ -1,0 +1,23 @@
+{
+  "name": "longw010.github.io",
+  "version": "1.0.0",
+  "description": "This is the repo for [longw's personal blog](https://longw010.github.io).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/longw010/longw010.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/longw010/longw010.github.io/issues"
+  },
+  "homepage": "https://github.com/longw010/longw010.github.io#readme",
+  "dependencies": {
+    "prettier": "^2.0.5"
+  },
+  "pretty": "prettier --write \"./**/*.{js,jsx,json}\"" 
+}
