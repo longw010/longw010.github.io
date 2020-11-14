@@ -84,26 +84,35 @@
         </div>
         <p>&nbsp</p>
 
-        <script>
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function() {
-                scrollFunction()
-            };
-
-            function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    document.getElementById("myBtn").style.display = "block";
-                } else {
-                    document.getElementById("myBtn").style.display = "none";
-                }
-            }
-
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-        </script>
+        <div style="margin-top: 10px; text-align: center; font-size: 14px;">
+                <footer class="site-footer">
+                    <div class="contact">
+                        <a href="https://github.com/longw010/">
+                            <div class='card'>
+                                <img src="images/github2.png" width="38" height="38" alt='Card Back'>
+                                <img src="images/github.png" width="38" height="38" class="img-top" alt='Card Front'>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lwang010/">
+                            <div class='card'>
+                                <img src="images/linkedin2.png" width="38" height="38" alt='Card Back'>
+                                <img src="images/linkedin.png" width="38" height="38" class="img-top" alt='Card Front'>
+                            </div>
+                        </a>
+                        <a href="mailto:lwang010@gmail">
+                            <div class='card'>
+                                <img src="images/mail2.png" width="38" height="38" alt='Card Back'>
+                                <img src="images/mail.png" width="38" height="38" class="img-top" alt='Card Front'>
+                            </div>
+                        </a>
+                    </div>
+                    Copyright &copy; 2016 - 2020, Long Wang. All rights reserved.
+                    <br>
+                    <script language="Javascript">
+                        document.write("Last Updated: " + document.lastModified + "");
+                    </script>
+                </footer>
+            </div>
         <head>
             <link rel=import href='utils/footnote.html'>
         </head>
