@@ -163,8 +163,8 @@ span.emph {
   font-size: 18px;
   color: #4D5053;
   line-height:1.2;
-  text-align: justify;
-  text-align-last: justify;
+  /*text-align: justify;
+  #text-align-last: justify;*/
 }
 .tooltip {
     position: relative;
