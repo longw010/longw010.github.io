@@ -82,8 +82,8 @@ body {
 .introduction {
   margin-bottom: 10px;
   color: #4D5053;
-  text-align: justify;
-  text-align-last: justify;
+  /* text-align: justify;
+  text-align-last: justify;*/
 }
 .abstract, .introduction {
   overflow: auto;
