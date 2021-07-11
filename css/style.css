@@ -82,6 +82,8 @@ body {
 .introduction {
   margin-bottom: 10px;
   color: #4D5053;
+  text-align: justify;
+  text-align-last: justify;
 }
 .abstract, .introduction {
   overflow: auto;
@@ -161,7 +163,8 @@ span.emph {
   font-size: 18px;
   color: #4D5053;
   line-height:1.2;
-
+  text-align: justify;
+  text-align-last: justify;
 }
 .tooltip {
     position: relative;
