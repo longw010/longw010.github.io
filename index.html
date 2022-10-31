@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Long</title>
+    <meta name="google-site-verification" content="_icP2W3B6y_gFG92Dh-caUWIh_sEnE4tPu8pghzaH2w"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 500, function() {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+<div class="banner">
+    <div id="header">
+        <div id="name">
+            <a class="two" href="index.html"> <img src="images/name.png" width="231" height="42" border="0"></a>
+        </div>
+        <div id="navigator">
+            <div class="nav_cell"><a class="two" href="https://lwang010.gitbook.io/longw/">MLops</a></div>
+            <div class="nav_cell"><a class="two" href="https://lwang010.gitbook.io/design101/">UXdesign</a></div>
+            <div class="nav_cell"><a class="two" href="news.html">Rambling</a></div>
+            <div class="nav_cell"><a class="two" href="index.html">About</a></div>
+        </div>
+    </div>
+</div>
+
+<div id="main">
+    <div class="content">
+        <div class="introduction">
+            <figure style="float:center;width: 80%; height: 80%">
+                <img src="images/selfie.jpg" style="width: 80%; height: 80%"/>
+            </figure>
+            <div>
+                <p>&nbsp;</p>
+                <p>Hey, this is <a class="one" href="https://www.linkedin.com/in/lwang010" target="_blank">Long</a>, an
+                    engineer. She works in computer vision/machine learning, and is a big fan to explore ways to
+                    facilitate workflow and build internal tools. Currently, she is working on a GitBook about <a class='one'
+                                                                    href='https://lwang010.gitbook.io/longw/'> MLops</a>,
+                    another GitBook about <a class='one' href='https://lwang010.gitbook.io/design101/'> UX design</a>,
+                    and hosting a <a class='one' href='https://open.spotify.com/show/2pnS4tIkvgMWkFM8W5XtUw/'>
+                        podcast</a>. Feel free to contact her via <a class='one' href="mailto:lwang010@gmail.com">
+                        email</a>.</p>
+
+                <p> Can you spot the 3 types of artifacts in the photo above? </p>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div style="margin-top: 10px; text-align: center; font-size: 14px;">
+            <footer class="site-footer">
+                <div class="contact">
+                    <a href="https://github.com/longw010/">
+                        <div class='card'>
+                            <img src="images/github2.png" width="38" height="38" alt='Card Back'>
+                            <img src="images/github.png" width="38" height="38" class="img-top" alt='Card Front'>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/lwang010/">
+                        <div class='card'>
+                            <img src="images/linkedin2.png" width="38" height="38" alt='Card Back'>
+                            <img src="images/linkedin.png" width="38" height="38" class="img-top" alt='Card Front'>
+                        </div>
+                    </a>
+                    <a href="mailto:lwang010@gmail">
+                        <div class='card'>
+                            <img src="images/mail2.png" width="38" height="38" alt='Card Back'>
+                            <img src="images/mail.png" width="38" height="38" class="img-top" alt='Card Front'>
+                        </div>
+                    </a>
+                </div>
+                Copyright &copy; 2016 - 2021, Long Wang. All rights reserved.
+                <br>
+                <script language="Javascript">
+                        document.write("Last Updated: " + document.lastModified + "");
+
+                </script>
+            </footer>
+        </div>
+
+        <head>
+            <link rel="import" href="footnote.html">
+        </head>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Long</title>
+    <meta name="google-site-verification" content="_icP2W3B6y_gFG92Dh-caUWIh_sEnE4tPu8pghzaH2w"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 500, function() {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div class="banner">
+    <div id="header">
+        <div id="name">
+            <a class="two" href="index.html"> <img src="images/name.png" width="231" height="42" border="0"></a>
+        </div>
+        <div id="navigator">
+            <div class="nav_cell"><a class="two" href="https://lwang010.gitbook.io/longw/">MLops</a></div>
+            <div class="nav_cell"><a class="two" href="https://lwang010.gitbook.io/design101/">UXdesign</a></div>
+            <div class="nav_cell"><a class="two" href="news.html">Rambling</a></div>
+            <div class="nav_cell"><a class="two" href="index.html">About</a></div>
+        </div>
+    </div>
+</div>
+
+<div id="main">
+    <!--###### News ###### -->
+    <div class="research_title">
+        <p>News:</p>
+    </div>
+    <div class="content">
+        <div class="introduction">
+            <div style="text-indent: 60px;">
+                <li> 2022/11: Launch a newsletter about <a class="one" href="https://longw.substack.com/">Practing Machine Learning Ops at Startup </a></li>
+                <li> 2021/10: 269 meetings at <a class="one" href="https://lunchclub.com/profile"> lunch-club </a></li> 
+                <li> 2022/05: Ran into accident, stay in hospital for months... </li>
+                <li> 2021/11: Graduated from immersive theatre program at <a class='one' href='https://en.sta.edu.cn/'>STA </a><a class='one' href="images/sta.PNG">[P1]</a> </li>
+                <li> 2021/11: 178 meetings at <a class="one" href="https://lunchclub.com/profile"> lunch-club </a></li> 
+                <li> 2021/10: Start to practice sketch<a class='one' href="images/sketch.PNG">[P1]</a>  </li>
+                <li> 2021/09: In Shanghai <a class='one' href="images/birch.PNG">[P1]</a></li>
+                <li> 2021/08: Started to work on <a class="one" href="https://lwang010.gitbook.io/design101/">UX design GitBook </a> </li>
+                <li> 2021/04: Launched a podcast: <a class="one" href="https://open.spotify.com/show/2pnS4tIkvgMWkFM8W5XtUw">team up for the quarter life crisis</a> </li>
+                <li> 2020/11: Started to work on <a class="one" href="https://lwang010.gitbook.io/longw/">MLops GitBook </a> </li>
+                <li> 2020/01: ISMRM - data sampling @Sedona
+                    <a class='one' href="images/sedona/P1.jpg">[P1]</a>
+                    <a class='one' href="images/sedona/P2.jpg">[P2]</a>
+                </li>
+                <li> 2019/12: Medical Imaging meets NeurIPS <a class='one' href="images/nips.PNG">[P1]</a></li>
+                <li> 2019/10: Tensorflow world <a class='one' href="images/tensorflow_world.PNG">[P1]</a></li>
+                <li> 2019/06: CVPR</li>
+                <li> 2018/05: Graduation and trip around the east coast with family </li>
+            </div>
+        </div>
+    </div>
+
+    <!--###### Sharing: ###### -->
+    <p>&nbsp;</p>
+    <div class="research_title">
+        <p>Sharing:</p>
+    </div>
+    <div class="subwords">
+        <div style="text-indent: 60px;">
+            <li>survive from depression</li>
+            <li>how to make podcast</li>
+            <li>self-care</li>
+            <li>things come naturally. <a class="one" href="https://mp.weixin.qq.com/s/6MyCk6CKrSZ0E7dedIpSXA">note(CHINESE)</a></li>
+        </div>
+    </div>
+
+    <!--###### Book notes: ###### -->
+    <p>&nbsp;</p>
+    <div class="research_title">
+        <p>Book notes:</p>
+    </div>
+    <div class="subwords">
+        <div style="text-indent: 60px;">
+            <li>cultural</li>
+        </div>
+    </div>
+
+
+        <hr>
+
+        <div style="margin-top: 10px; text-align: center; font-size: 14px;">
+            <footer class="site-footer">
+                <div class="contact">
+                    <a href="https://github.com/longw010/">
+                        <div class='card'>
+                            <img src="images/github2.png" width="38" height="38" alt='Card Back'>
+                            <img src="images/github.png" width="38" height="38" class="img-top" alt='Card Front'>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/lwang010/">
+                        <div class='card'>
+                            <img src="images/linkedin2.png" width="38" height="38" alt='Card Back'>
+                            <img src="images/linkedin.png" width="38" height="38" class="img-top" alt='Card Front'>
+                        </div>
+                    </a>
+                    <a href="mailto:lwang010@gmail">
+                        <div class='card'>
+                            <img src="images/mail2.png" width="38" height="38" alt='Card Back'>
+                            <img src="images/mail.png" width="38" height="38" class="img-top" alt='Card Front'>
+                        </div>
+                    </a>
+                </div>
+                Copyright &copy; 2016 - 2021, Long Wang. All rights reserved.
+                <br>
+                <script language="Javascript">
+                        document.write("Last Updated: " + document.lastModified + "");
+
+
+
+
+                </script>
+            </footer>
+        </div>
+
+        <head>
+            <link rel="import" href="footnote.html">
+        </head>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Long</title>
+  <meta name="google-site-verification" content="_icP2W3B6y_gFG92Dh-caUWIh_sEnE4tPu8pghzaH2w" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("a").on('click', function (event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+
+          var hash = this.hash;
+
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 500, function () {
+            window.location.hash = hash;
+          });
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="banner">
+    <div id="header">
+      <div id="name">
+        <a class="two" href="https://longw010.github.io/index.html"> <img src="../../images/name.png" width="231"
+            height="42" border="0"></a>
+      </div>
+      <div id="navigator">
+        <div class="nav_cell"><a class="two" href="../../index.html">ABOUT</a></div>
+        <div class="nav_cell"><a class="two" href="../../blog.html">BLOG</a></div>
+        <div class="nav_cell"><a class="two" href="../../snippet.html">SNIPPET</a></div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div id="main">
+    <div class="content">
+      <div class='date'>
+        Oct 10, 2017 </div>
+      <div class="title"> <a class="two" href="https://longw010.github.io/toolkit/2017/globalRDD.html"> Global var
+          doesn't work in this context.</a>
+      </div>
+
+      <p>
+        The following example shows a deliberate combination of local and global variables and function parameters, and
+        how global variables work: </p>
+
+      <p>
+      <pre>
+def foo(x, y):
+	global a
+	a = 42
+	x,y = y,x
+	b = 33
+	b = 17
+	c = 100
+	print a,b,x,y
+
+a,b,x,y = 1,15,3,4
+foo(17,4)
+print a,b,x,y </pre>
+      </noscript>
+      </p>
+
+      <p> The output of the script above looks like this: </p>
+      <p>
+      <pre>
+42 17 4 17
+42 15 3 4 </pre>
+      </p>
+
+      <p> What is the output of the following code?
+      <p>
+      <pre>
+def increment_counter():
+    global counter
+    counter += 1
+    print(counter)
+
+def get_number_of_elements(rdd):
+    global counter
+    counter = 0
+    rdd.foreach(lambda x: increment_counter())
+    return counter </pre>
+      </p>
+
+      <p> It is <b> 0. </b></p>
+      <p> My guess is that although the function increment_counter() increments the number of element in rdd correctly,
+        it will not assign the value of counter from function increment_counter() to the counter in function
+        get_number_of_elements(rdd). In other word, it (rdd.foreach) won’t update counter in get_number_of_elements()
+        because global variable is not caught by the functions executed in foreach in pyspark. Thus, the counter
+        returned from get_number_of_element(rdd) is still 0 no matter how many the number of element rdd has. </p>
+
+
+      <p> You can check it out using the following code. </p>
+      <p>
+      <pre>
+from __future__ import print_function
+
+from pyspark.sql import SparkSession
+
+def increment_counter():
+    global counter
+    counter += 1
+    print(counter)
+
+def get_number_of_elements(rdd):
+    global counter
+    counter = 0
+    rdd.foreach(lambda x: increment_counter())
+    return counter
+
+if __name__ == "__main__":
+    # Initialize the spark context.
+    spark = SparkSession\
+       .builder\
+        .appName("test")\
+        .getOrCreate()
+
+    lines = spark.read.text('url.txt').rdd.map(lambda r: r[0])
+    #print(lines.collect())
+    print(get_number_of_elements(lines))
+
+    spark.stop()</pre>
+      </p>
+    </div>
+
+    <p>Thus, we should use <b> reduceByKey </b> instead. </p>
+
+    <br>
+
+    <div id="container1"></div>
+    <link rel="stylesheet" href="https://longw010.github.io/css/gitment.css">
+    <script src="https://longw010.github.io/dist/gitment.browser.js"></script>
+    <script>
+      var gitment = new Gitment({
+        id: '10102017',
+        owner: 'longw010',
+        repo: 'longw010.github.io',
+        oauth: {
+          client_id: '25cab6d3b1b4131c28e8',
+          client_secret: '272c00d3f6e3d40d1ad35cba7509fec6bc5aff65',
+        },
+      })
+      gitment.render('container1')
+    </script>
+
+
+    <hr>
+    <div style="margin-top: 10px; text-align: center; font-size: 14px;">
+      <section class="pagination" style="text-align:center">
+      </section>
+      </article>
+      <footer class="site-footer">
+        <div class="contact">
+          <a href="https://github.com/longw010/">
+            <div class='card'>
+              <img src="../../images/github2.png" width="38" height="38" alt='Card Back'>
+              <img src="../../images/github.png" width="38" height="38" class="img-top" alt='Card Front'>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/lwang010/">
+            <div class='card'>
+              <img src="../../images/linkedin2.png" width="38" height="38" alt='Card Back'>
+              <img src="../../images/linkedin.png" width="38" height="38" class="img-top" alt='Card Front'>
+            </div>
+          </a>
+          <a href="mailto:longw@andrew.cmu.edu">
+            <div class='card'>
+              <img src="../../images/mail2.png" width="38" height="38" alt='Card Back'>
+              <img src="../../images/mail.png" width="38" height="38" class="img-top" alt='Card Front'>
+            </div>
+          </a>
+        </div>
+        Copyright &copy; 2016 - 2018, Long Wang. All rights reserved.<br>
+        <script language="Javascript">
+          document.write("Last Updated: " + document.lastModified + "");
+        </SCRIPT>
+    </div>
+
+    <head>
+      <link rel="import" href="footnote.html">
+    </head>
+
+</body>
+
+</html>
