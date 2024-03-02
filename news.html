@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Long</title>
+    <title>Hey, Long!</title>
     <meta name="google-site-verification" content="_icP2W3B6y_gFG92Dh-caUWIh_sEnE4tPu8pghzaH2w"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
@@ -88,44 +88,51 @@
     </div>
 
 
-        <hr>
+    <hr>
+        <footer class="site-footer" style="text-align: center; font-size: 14px;">
+            <div class="contact">
+                <a href="https://github.com/longw010/">
+                    <div class='card'>
+                        <img src="images/github2.png" width="38" height="38" alt='Github Logo'>
+                        <img src="images/github.png" width="38" height="38" class="img-top" alt='Github Logo'>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/lwang010/">
+                    <div class='card'>
+                        <img src="images/linkedin2.png" width="38" height="38" alt='LinkedIn Logo'>
+                        <img src="images/linkedin.png" width="38" height="38" class="img-top" alt='LinkedIn Logo'>
+                    </div>
+                </a>
+                <a href="mailto:lwang010@gmail.com">
+                    <div class='card'>
+                        <img src="images/mail2.png" width="38" height="38" alt='Email Logo'>
+                        <img src="images/mail.png" width="38" height="38" class="img-top" alt='Email Logo'>
+                    </div>
+                </a>
+            </div>
+            <p>Copyright © Long Wang <span id="year"></span></p>
+        </footer>
+    </main>
 
-        <div style="margin-top: 10px; text-align: center; font-size: 14px;">
-            <footer class="site-footer">
-                <div class="contact">
-                    <a href="https://github.com/longw010/">
-                        <div class='card'>
-                            <img src="images/github2.png" width="38" height="38" alt='Card Back'>
-                            <img src="images/github.png" width="38" height="38" class="img-top" alt='Card Front'>
-                        </div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/lwang010/">
-                        <div class='card'>
-                            <img src="images/linkedin2.png" width="38" height="38" alt='Card Back'>
-                            <img src="images/linkedin.png" width="38" height="38" class="img-top" alt='Card Front'>
-                        </div>
-                    </a>
-                    <a href="mailto:lwang010@gmail">
-                        <div class='card'>
-                            <img src="images/mail2.png" width="38" height="38" alt='Card Back'>
-                            <img src="images/mail.png" width="38" height="38" class="img-top" alt='Card Front'>
-                        </div>
-                    </a>
-                </div>
-                Copyright &copy; 2016 - 2021, Long Wang. All rights reserved.
-                <br>
-                <script language="Javascript">
-                        document.write("Last Updated: " + document.lastModified + "");
+    <script>
+        $(document).ready(function() {
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 500, function() {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
 
-
-
-
-                </script>
-            </footer>
-        </div>
-
-        <head>
-            <link rel="import" href="footnote.html">
-        </head>
-
+        // This JavaScript code sets the content of the element with id "year" to the current year
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
 </html>
