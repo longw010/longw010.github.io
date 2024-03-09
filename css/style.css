@@ -4,6 +4,48 @@ div, ul, img {
   border: 1px solid gray;
 }
 */
+
+
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff; /* 如果想要和body文字颜色一样，这里应该改为 #4D5053 */
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  font-family: Helvetica, Arial, sans-serif; /* 保持和body一致 */
+  font-size: 18px; /* 保持和body一致 */
+  font-weight: 100; /* 保持和body一致 */
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.floating-circle {
+    width: 200px; /* Reduced size for the image */
+    height: 200px; /* Height equal to the width to maintain the circle shape */
+    border-radius: 90%; /* This creates the circular shape */
+    object-fit: cover; /* Ensures the rectangular image covers the circular frame properly */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23); /* Subtle shadow for a floating effect */
+    transition: transform 0.3s; /* Smooth transition for the hover effect */
+}
+
+.floating-circle:hover {
+    transform: translateY(-5px); /* Slight move up on hover for the floating effect */
+}
+
+
 body {
   background-image: url('../images/background.png');
   background-color: #ddd;
